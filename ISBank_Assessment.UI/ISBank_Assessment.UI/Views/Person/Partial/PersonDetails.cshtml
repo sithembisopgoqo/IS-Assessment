@@ -1,0 +1,222 @@
+﻿@model ISBank_Assessment.UI.Models.EditPersonModel
+
+@using ISBank_Assessment.UI.Enums
+@using ISBank_Assessment.UI.Common
+@using System.Globalization
+
+@{
+    WebGrid grid = new WebGrid();
+    grid.Bind(Model.AccountList, rowCount: 10, autoSortAndPage: false);
+
+}
+
+@*TODO -  Create labels
+       - DataTable Grid  
+      
+ *@
+
+@helper GoToAccount(int Code)
+{
+    <a id="GoToAccount" class="GoToAccount btn btn-outline-primary" href="#" data-codeid="@Code" data-toggle="tooltip" data-placement="left" title="Edit">
+        <span class="fa fa-pencil-alt"></span>
+    </a>
+}
+
+@helper GoToStatus(int StatusId)
+{
+    <label>@ISBank_Assessment.UI.Common.EnumHelper.GetDescription((AccountStatus)Enum.Parse(typeof(AccountStatus), StatusId.ToString()))</label>
+}
+
+
+
+@using (Html.BeginForm("SavePerson", "Person", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Person Details</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(x=>x.Code)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.Code>0)
+{
+    
+    
+<h3>Accounts</h3>
+<a id="" style="float:right;" type="button" class=" btn btn-outline-primary" href="@Url.Action("AccountDetails", "Account")" data-toggle="tooltip" data-placement="left" title="Add Account">
+    <span class="btn btn-primary">Add Account</span>
+</a>
+
+<table class="table">
+    <tr>
+        <th>
+
+            @Html.DisplayNameFor(model => model.PersonCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutstandingBalance)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusId)
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.AccountList)
+    {
+        <tr>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.PersonCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutstandingBalance)
+            </td>
+            <td>
+                @*@Html.CheckBoxFor(modelItem => modelItem.StatusId, new { @id = "Status", @class = "StatusbtnToggle switch", @type = "checkbox", @size = "20" })*@
+                @*TODO -Need to change this to checkbox Toogle *@
+                <a  id="changeStatus" type="" class="changeStatus btn btn-outline-primary" href="@Url.Action("changeAccountStatus", "Account", new {@personCode=item.PersonCode, @code = item.Code, @statusId = item.StatusId})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Change Status">
+                    <label style="text-decoration:underline">
+                        @ISBank_Assessment.UI.Common.EnumHelper.GetDescription((AccountStatus)Enum.Parse(typeof(AccountStatus), item.StatusId.ToString()))
+                    </label>
+                </a>
+                
+            </td>
+            <td>
+
+
+                <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Account", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Account Details">
+                    <span class="btn btn-primary">Account Details</span>
+                </a>
+
+                <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Account", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
+                    <span class="btn btn-primary">Edit</span>
+                </a>
+
+                <a id="remove" type="button" class="removeAccountDetails btn btn-outline-primary" href="#" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Remove">
+                    <span class="btn btn-danger">Delete</span>
+                </a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+}
+
+
+@*<div class="row">
+    @grid.Table(
+        tableStyle: "childTable nowrap",
+        htmlAttributes: new { @id = "childTable" },
+        columns: new[] {
+            grid.Column("PersonCode", header: "Person Code", canSort: false),
+            grid.Column("AccountNumber", header: "Account Number", canSort: false),
+            grid.Column("OutstandingBalance", header: "Outstanding Balance", canSort: true),
+            grid.Column("StatusId", header: "Status", canSort: true,
+                format: item => GoToStatus(item.StatusId)),
+            grid.Column("", "", canSort: false,
+                format: item => GoToAccount(item.Code))
+    })
+
+    @grid.Pager(mode: WebGridPagerModes.All, firstText: "first", previousText: "Previous", nextText: "Next", lastText: "Last")
+</div>*@
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+
+        @*$('.StatusbtnToggle').bootstrapToggle({
+         on: '@Labels.Active',
+         off: '@Labels.Inactive',
+         width: '150px',
+         size: 'medium'
+         });*@
+
+
+    @* $('.changeStatus').on('click', function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action(MVC.Account.changeAccountStatus())',
+            contentType: "application/json; charset=utf-8",
+            data: { "code": $(this).data("codeid"),"statusId" :$(this).data("statusId")},
+            datatype: "json",
+            success: function (data) {
+             
+                
+            },
+            error: function () {
+            }
+        });
+    });*@
+
+    @*$('.GoToAccount').on('click', function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action(MVC.Account.AccountDetails())',
+            contentType: "application/json; charset=utf-8",
+            data: { "Code": $(this).data("codeid")},
+            datatype: "json",
+            success: function (data) {
+             
+            },
+            error: function () {
+            }
+        });
+    });*@
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

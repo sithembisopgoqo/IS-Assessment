@@ -1,0 +1,161 @@
+﻿@model ISBank_Assessment.UI.Models.GetPersonViewModel
+
+@{
+    ViewBag.Title = "GetPersons";
+}
+
+<h2>Persons</h2>
+
+
+<a id="" style="float:right;" type="button" class=" btn btn-outline-primary" href="@Url.Action("PersonDetails", "Person")" data-toggle="tooltip" data-placement="left" title="Add Person">
+    <span class="btn btn-primary">Add Person</span>
+</a>
+
+
+@using (Html.BeginForm(MVC.Person.GetPersons(), FormMethod.Get, new { }))
+{
+    <div class="leftside">
+        <div class="search-table-btn">
+            <div class="input-group">
+                @Html.TextBoxFor(c => c.SearchText, new { @type = "search", @id = "searchInput", @class = "form-control py-2 ui-autocomplete-input ", @placeholder = "Search", @autocomplete = "off" })
+                <span class="input-group-addon search-btn-text" type="submit" id="btnSearch">Search</span>
+            </div>
+        </div>
+      
+    </div>
+}
+
+@*TODO- DataTable grid*@
+<script src="~/Scripts/Grid/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/Grid/jszip.min.js"></script>
+<link href="~/Content/DataTables/jquery.dataTables.min.css" rel="stylesheet" />
+
+<table id="tblGrid" class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDNumber)
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PersonList)
+        {
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDNumber)
+                </td>
+                <td>
+                    <a id="GoToPersonDetails" type="button" class="GoToPersonDetails btn btn-outline-primary" href="@Url.Action("PersonDetails", "Person", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
+                        <span class="btn btn-primary">Edit</span>
+                    </a>
+
+                    <a id="remove" type="button" class="removePerson btn btn-outline-primary" href="@Url.Action("DeletePerson", "Person", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Remove">
+                        <span class="btn btn-danger">Delete</span>
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section Scripts {
+
+
+    <script>
+    $(document).ready(function () {
+
+        $('#childTable').dataTable({
+            scrollCollapse: true,
+            autoWidth: false,
+            responsive: true,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            order: [[0, 'desc']],
+            "columnDefs": [{
+                "targets": [3],
+                "orderable": false
+            }]
+        });
+        $('div.dataTables_length select').selectpicker({
+            width: '80px'
+        });
+
+    });
+
+
+        $(document).ready(function () {
+            gridDataTableView("Grid Example.xls");
+        });
+
+
+    gridDataTableView = function (fname) {
+        $('#tblGrid').dataTable({
+            "bFilter": true,
+            "bLengthChange": false, "bPaginate": true, "bInfo": true,
+            dom: 'Bfrtip',
+            "order": [[0, 'desc'], [1, 'desc']],
+
+        });
+        }
+
+          $('#btnSearch').on('click', function () {
+
+            var text = $('#searchInput').val();
+
+            var url = '@Url.Action(MVC.Person.GetPersons())' + '?' + '@MVC.Person.GetPersonsParams.SearchText' + '=' + text;
+            window.location.href = url;
+        });
+
+    @*$('.GoToPersonDetails').on('click', function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("", "")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ "Code": $(this).data("codeid") }),
+                datatype: "json",
+                success: function (data) {
+                    window.location.href = '@Url.Action("", "")';
+                },
+                error: function () {
+                }
+            });
+      });*@
+
+    </script>
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+}
