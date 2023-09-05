@@ -1,0 +1,167 @@
+﻿@model ISBank_Assessment.UI.Models.EditAccountModel
+
+
+
+@*TODO - Labels
+    - DataTable Grid
+
+*@
+
+
+@using (Html.BeginForm("SaveAccount", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Account Details</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(x => x.Code)
+        <div class="form-group">
+            @Html.LabelFor(model => model.PersonCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.PersonCode, Model.PersonList, new { @class = "control-label col-md-2" })
+                @Html.ValidationMessageFor(model => model.PersonCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AccountNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @if (Model.Code > 0)
+        {
+
+        }
+        else
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.OutstandingBalance, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OutstandingBalance, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OutstandingBalance, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        }
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StatusId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.StatusId, Model.StatusListItems, new { @class = "control-label col-md-2" })
+                @Html.ValidationMessageFor(model => model.StatusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.Code > 0)
+{
+
+    <h3>Transactions</h3>
+    <a class="btn btn-outline-primary AddTransaction" href="#" data-toggle="tooltip" data-placement="left" data-personcodeid="@Model.Code" title="Add Transaction">
+        <span class="btn btn-primary">Add Transaction</span>
+    </a>
+   
+    <table class="table">
+        <tr>
+            <th>
+                Account Code
+                @*@Labels.AccountCode*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutstandingBalance)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusId)
+
+            </th>
+            <th>
+                Description
+                @*@Labels.Description*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.TransactionsList)
+        {
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.AccountCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaptureDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+
+
+                    <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Trans", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Account Details">
+                        <span class="btn btn-primary">Account Details</span>
+                    </a>
+
+                    <a id="GoToAccountDetails" type="button" class="GoToTransactionDetails btn btn-outline-primary" href="@Url.Action("TransactionDetails", "Account", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
+                        <span class="btn btn-primary">Edit</span>
+                    </a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+
+    <script>
+
+        $('.AddTransaction').on('click', function ()
+            {
+            var PersonCode = $(this).data('personcodeid');
+
+                $.ajax({
+                    type: "GET",
+                    url: '@Url.Action(MVC.Account.TransactionDetails())',
+                    contentType: "application/json; charset=utf-8",
+                    data: { "Code": 0, "PersonCode": PersonCode},
+                    success: function (data) {
+                        @*var url = '@Url.Action(MVC.Account.TransactionDetails(0))';
+                        window.location.href = url;*@
+                    },
+                    error: function () {
+
+                    }
+                });
+            });
+    </script>
+
+}
