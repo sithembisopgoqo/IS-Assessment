@@ -1,5 +1,6 @@
 ﻿using ISBank_Assessment.UI.Common;
 using ISBank_Assessment.UI.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace ISBank_Assessment.UI.Controllers
 
 
             model.PersonList = await personClient.GetAllPersonsAsync(UserId, SearchText);
+            int pageSize = 5;
+            int pageIndex = model.PersonList.Count();
+            //model.PersonList = model.PersonList.ToPagedList(pageIndex, pageSize);
 
             return View(model);
         }

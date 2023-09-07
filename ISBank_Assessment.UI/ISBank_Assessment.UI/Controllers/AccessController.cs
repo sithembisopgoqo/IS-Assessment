@@ -115,6 +115,7 @@ namespace ISBank_Assessment.UI.Controllers
 
         // POST: /User/LogOff
         //LogOff method for the user to end the session
+        [AllowAnonymous]
         public virtual ActionResult LogOff()
         {
 

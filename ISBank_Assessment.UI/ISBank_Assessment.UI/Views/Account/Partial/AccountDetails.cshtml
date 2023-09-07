@@ -59,7 +59,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -69,10 +69,10 @@
 {
 
     <h3>Transactions</h3>
-    <a class="btn btn-outline-primary AddTransaction" href="#" data-toggle="tooltip" data-placement="left" data-personcodeid="@Model.Code" title="Add Transaction">
+    <a class="btn btn-outline-primary AddTransaction" href="@Url.Action("TransactionDetails","Account", new {@Personcode=51 })" data-toggle="tooltip" data-placement="left" data-personcodeid="@Model.Code" title="Add Transaction">
         <span class="btn btn-primary">Add Transaction</span>
     </a>
-   
+
     <table class="table">
         <tr>
             <th>
@@ -80,15 +80,15 @@
                 @*@Labels.AccountCode*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AccountNumber)
+                @Html.DisplayNameFor(model => model.TransactionDate)
 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OutstandingBalance)
+                @Html.DisplayNameFor(model => model.CaptureDate)
 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StatusId)
+                @Html.DisplayNameFor(model => model.Amount)
 
             </th>
             <th>
@@ -119,11 +119,6 @@
                 </td>
                 <td>
 
-
-                    <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Trans", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Account Details">
-                        <span class="btn btn-primary">Account Details</span>
-                    </a>
-
                     <a id="GoToAccountDetails" type="button" class="GoToTransactionDetails btn btn-outline-primary" href="@Url.Action("TransactionDetails", "Account", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
                         <span class="btn btn-primary">Edit</span>
                     </a>
@@ -141,8 +136,8 @@
 </div>
 
 @section Scripts {
-
     <script>
+
 
         $('.AddTransaction').on('click', function ()
             {
@@ -161,7 +156,9 @@
 
                     }
                 });
-            });
+        });
+
+
     </script>
 
 }

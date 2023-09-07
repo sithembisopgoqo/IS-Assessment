@@ -89,8 +89,30 @@ namespace Links
         public const string UrlPath = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+        public static readonly string bootstrap_select_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-select.min.js") ? Url("bootstrap-select.min.js") : Url("bootstrap-select.js");
         public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
         public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+        public static readonly string chosen_jquery_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/chosen.jquery.min.js") ? Url("chosen.jquery.min.js") : Url("chosen.jquery.js");
+        public static readonly string chosen_jquery_min_js = Url("chosen.jquery.min.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class fontawesome_ {
+            public const string UrlPath = "~/Scripts/fontawesome_";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string all_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/all.min.js") ? Url("all.min.js") : Url("all.js");
+            public static readonly string all_min_js = Url("all.min.js");
+            public static readonly string brands_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/brands.min.js") ? Url("brands.min.js") : Url("brands.js");
+            public static readonly string brands_min_js = Url("brands.min.js");
+            public static readonly string fontawesome_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fontawesome.min.js") ? Url("fontawesome.min.js") : Url("fontawesome.js");
+            public static readonly string fontawesome_min_js = Url("fontawesome.min.js");
+            public static readonly string regular_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/regular.min.js") ? Url("regular.min.js") : Url("regular.js");
+            public static readonly string regular_min_js = Url("regular.min.js");
+            public static readonly string solid_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/solid.min.js") ? Url("solid.min.js") : Url("solid.js");
+            public static readonly string solid_min_js = Url("solid.min.js");
+            public static readonly string v4_shims_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/v4-shims.min.js") ? Url("v4-shims.min.js") : Url("v4-shims.js");
+            public static readonly string v4_shims_min_js = Url("v4-shims.min.js");
+        }
+    
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Grid {
             public const string UrlPath = "~/Scripts/Grid";
@@ -108,12 +130,74 @@ namespace Links
         public static readonly string jquery_3_3_1_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.slim.min.js") ? Url("jquery-3.3.1.slim.min.js") : Url("jquery-3.3.1.slim.js");
         public static readonly string jquery_3_3_1_slim_min_js = Url("jquery-3.3.1.slim.min.js");
         public static readonly string jquery_3_3_1_slim_min_map = Url("jquery-3.3.1.slim.min.map");
+        public static readonly string jquery_nice_select_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.nice-select.min.js") ? Url("jquery.nice-select.min.js") : Url("jquery.nice-select.js");
+        public static readonly string jquery_steps_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.steps.min.js") ? Url("jquery.steps.min.js") : Url("jquery.steps.js");
+        public static readonly string jquery_steps_min_js = Url("jquery.steps.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
         public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
         public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
         public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
         public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class js_ {
+            public const string UrlPath = "~/Scripts/js_";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string aos_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/aos.min.js") ? Url("aos.min.js") : Url("aos.js");
+            public static readonly string bootstrap_datepicker_min_js = Url("bootstrap-datepicker.min.js");
+            public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+            public static readonly string isotope_pkgd_min_js = Url("isotope.pkgd.min.js");
+            public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
+            public static readonly string jquery_migrate_3_0_1_min_js = Url("jquery-migrate-3.0.1.min.js");
+            public static readonly string jquery_ui_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui.min.js") ? Url("jquery-ui.min.js") : Url("jquery-ui.js");
+            public static readonly string jquery_countdown_min_js = Url("jquery.countdown.min.js");
+            public static readonly string jquery_easing_1_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.easing.1.3.min.js") ? Url("jquery.easing.1.3.min.js") : Url("jquery.easing.1.3.js");
+            public static readonly string jquery_fancybox_min_js = Url("jquery.fancybox.min.js");
+            public static readonly string jquery_magnific_popup_min_js = Url("jquery.magnific-popup.min.js");
+            public static readonly string jquery_stellar_min_js = Url("jquery.stellar.min.js");
+            public static readonly string jquery_sticky_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.sticky.min.js") ? Url("jquery.sticky.min.js") : Url("jquery.sticky.js");
+            public static readonly string main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/main.min.js") ? Url("main.min.js") : Url("main.js");
+            public static readonly string mediaelement_and_player_min_js = Url("mediaelement-and-player.min.js");
+            public static readonly string owl_carousel_min_js = Url("owl.carousel.min.js");
+            public static readonly string popper_min_js = Url("popper.min.js");
+            public static readonly string slick_min_js = Url("slick.min.js");
+            public static readonly string typed_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/typed.min.js") ? Url("typed.min.js") : Url("typed.js");
+        }
+    
+        public static readonly string main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/main.min.js") ? Url("main.min.js") : Url("main.js");
         public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
+        public static readonly string MyCustomValidation_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/MyCustomValidation.min.js") ? Url("MyCustomValidation.min.js") : Url("MyCustomValidation.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Plugins {
+            public const string UrlPath = "~/Scripts/Plugins";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+        }
+    
+        public static readonly string select2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select2.min.js") ? Url("select2.min.js") : Url("select2.js");
+        public static readonly string select2_min_js = Url("select2.min.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Src_ {
+            public const string UrlPath = "~/Scripts/Src_";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string index_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/index.min.js") ? Url("index.min.js") : Url("index.js");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class User_ {
+            public const string UrlPath = "~/Scripts/User_";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string DataTables_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/DataTables.min.js") ? Url("DataTables.min.js") : Url("DataTables.js");
+            public static readonly string DatePicker_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/DatePicker.min.js") ? Url("DatePicker.min.js") : Url("DatePicker.js");
+            public static readonly string ErrorHandler_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ErrorHandler.min.js") ? Url("ErrorHandler.min.js") : Url("ErrorHandler.js");
+            public static readonly string global_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/global.min.js") ? Url("global.min.js") : Url("global.js");
+            public static readonly string global_min_js = Url("global.min.js");
+            public static readonly string ProductSlider_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/ProductSlider.min.js") ? Url("ProductSlider.min.js") : Url("ProductSlider.js");
+            public static readonly string Select2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Select2.min.js") ? Url("Select2.min.js") : Url("Select2.js");
+        }
+    
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -134,7 +218,188 @@ namespace Links
             public const string UrlPath = "~/Content/DataTables";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class css {
+                public const string UrlPath = "~/Content/DataTables/css";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string autoFill_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.bootstrap.min.css") ? Url("autoFill.bootstrap.min.css") : Url("autoFill.bootstrap.css");
+                public static readonly string autoFill_bootstrap_min_css = Url("autoFill.bootstrap.min.css");
+                public static readonly string autoFill_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.bootstrap4.min.css") ? Url("autoFill.bootstrap4.min.css") : Url("autoFill.bootstrap4.css");
+                public static readonly string autoFill_bootstrap4_min_css = Url("autoFill.bootstrap4.min.css");
+                public static readonly string autoFill_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.dataTables.min.css") ? Url("autoFill.dataTables.min.css") : Url("autoFill.dataTables.css");
+                public static readonly string autoFill_dataTables_min_css = Url("autoFill.dataTables.min.css");
+                public static readonly string autoFill_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.foundation.min.css") ? Url("autoFill.foundation.min.css") : Url("autoFill.foundation.css");
+                public static readonly string autoFill_foundation_min_css = Url("autoFill.foundation.min.css");
+                public static readonly string autoFill_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.jqueryui.min.css") ? Url("autoFill.jqueryui.min.css") : Url("autoFill.jqueryui.css");
+                public static readonly string autoFill_jqueryui_min_css = Url("autoFill.jqueryui.min.css");
+                public static readonly string autoFill_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/autoFill.semanticui.min.css") ? Url("autoFill.semanticui.min.css") : Url("autoFill.semanticui.css");
+                public static readonly string autoFill_semanticui_min_css = Url("autoFill.semanticui.min.css");
+                public static readonly string buttons_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.bootstrap.min.css") ? Url("buttons.bootstrap.min.css") : Url("buttons.bootstrap.css");
+                public static readonly string buttons_bootstrap_min_css = Url("buttons.bootstrap.min.css");
+                public static readonly string buttons_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.bootstrap4.min.css") ? Url("buttons.bootstrap4.min.css") : Url("buttons.bootstrap4.css");
+                public static readonly string buttons_bootstrap4_min_css = Url("buttons.bootstrap4.min.css");
+                public static readonly string buttons_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.dataTables.min.css") ? Url("buttons.dataTables.min.css") : Url("buttons.dataTables.css");
+                public static readonly string buttons_dataTables_min_css = Url("buttons.dataTables.min.css");
+                public static readonly string buttons_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.foundation.min.css") ? Url("buttons.foundation.min.css") : Url("buttons.foundation.css");
+                public static readonly string buttons_foundation_min_css = Url("buttons.foundation.min.css");
+                public static readonly string buttons_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.jqueryui.min.css") ? Url("buttons.jqueryui.min.css") : Url("buttons.jqueryui.css");
+                public static readonly string buttons_jqueryui_min_css = Url("buttons.jqueryui.min.css");
+                public static readonly string buttons_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/buttons.semanticui.min.css") ? Url("buttons.semanticui.min.css") : Url("buttons.semanticui.css");
+                public static readonly string buttons_semanticui_min_css = Url("buttons.semanticui.min.css");
+                public static readonly string colReorder_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.bootstrap.min.css") ? Url("colReorder.bootstrap.min.css") : Url("colReorder.bootstrap.css");
+                public static readonly string colReorder_bootstrap_min_css = Url("colReorder.bootstrap.min.css");
+                public static readonly string colReorder_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.bootstrap4.min.css") ? Url("colReorder.bootstrap4.min.css") : Url("colReorder.bootstrap4.css");
+                public static readonly string colReorder_bootstrap4_min_css = Url("colReorder.bootstrap4.min.css");
+                public static readonly string colReorder_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.dataTables.min.css") ? Url("colReorder.dataTables.min.css") : Url("colReorder.dataTables.css");
+                public static readonly string colReorder_dataTables_min_css = Url("colReorder.dataTables.min.css");
+                public static readonly string colReorder_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.foundation.min.css") ? Url("colReorder.foundation.min.css") : Url("colReorder.foundation.css");
+                public static readonly string colReorder_foundation_min_css = Url("colReorder.foundation.min.css");
+                public static readonly string colReorder_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.jqueryui.min.css") ? Url("colReorder.jqueryui.min.css") : Url("colReorder.jqueryui.css");
+                public static readonly string colReorder_jqueryui_min_css = Url("colReorder.jqueryui.min.css");
+                public static readonly string colReorder_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/colReorder.semanticui.min.css") ? Url("colReorder.semanticui.min.css") : Url("colReorder.semanticui.css");
+                public static readonly string colReorder_semanticui_min_css = Url("colReorder.semanticui.min.css");
+                public static readonly string common_scss = Url("common.scss");
+                public static readonly string dataTables_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.bootstrap.min.css") ? Url("dataTables.bootstrap.min.css") : Url("dataTables.bootstrap.css");
+                public static readonly string dataTables_bootstrap_min_css = Url("dataTables.bootstrap.min.css");
+                public static readonly string dataTables_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.bootstrap4.min.css") ? Url("dataTables.bootstrap4.min.css") : Url("dataTables.bootstrap4.css");
+                public static readonly string dataTables_bootstrap4_min_css = Url("dataTables.bootstrap4.min.css");
+                public static readonly string dataTables_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.foundation.min.css") ? Url("dataTables.foundation.min.css") : Url("dataTables.foundation.css");
+                public static readonly string dataTables_foundation_min_css = Url("dataTables.foundation.min.css");
+                public static readonly string dataTables_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.jqueryui.min.css") ? Url("dataTables.jqueryui.min.css") : Url("dataTables.jqueryui.css");
+                public static readonly string dataTables_jqueryui_min_css = Url("dataTables.jqueryui.min.css");
+                public static readonly string dataTables_material_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.material.min.css") ? Url("dataTables.material.min.css") : Url("dataTables.material.css");
+                public static readonly string dataTables_material_min_css = Url("dataTables.material.min.css");
+                public static readonly string dataTables_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.semanticui.min.css") ? Url("dataTables.semanticui.min.css") : Url("dataTables.semanticui.css");
+                public static readonly string dataTables_semanticui_min_css = Url("dataTables.semanticui.min.css");
+                public static readonly string dataTables_uikit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.uikit.min.css") ? Url("dataTables.uikit.min.css") : Url("dataTables.uikit.css");
+                public static readonly string dataTables_uikit_min_css = Url("dataTables.uikit.min.css");
+                public static readonly string fixedColumns_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.bootstrap.min.css") ? Url("fixedColumns.bootstrap.min.css") : Url("fixedColumns.bootstrap.css");
+                public static readonly string fixedColumns_bootstrap_min_css = Url("fixedColumns.bootstrap.min.css");
+                public static readonly string fixedColumns_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.bootstrap4.min.css") ? Url("fixedColumns.bootstrap4.min.css") : Url("fixedColumns.bootstrap4.css");
+                public static readonly string fixedColumns_bootstrap4_min_css = Url("fixedColumns.bootstrap4.min.css");
+                public static readonly string fixedColumns_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.dataTables.min.css") ? Url("fixedColumns.dataTables.min.css") : Url("fixedColumns.dataTables.css");
+                public static readonly string fixedColumns_dataTables_min_css = Url("fixedColumns.dataTables.min.css");
+                public static readonly string fixedColumns_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.foundation.min.css") ? Url("fixedColumns.foundation.min.css") : Url("fixedColumns.foundation.css");
+                public static readonly string fixedColumns_foundation_min_css = Url("fixedColumns.foundation.min.css");
+                public static readonly string fixedColumns_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.jqueryui.min.css") ? Url("fixedColumns.jqueryui.min.css") : Url("fixedColumns.jqueryui.css");
+                public static readonly string fixedColumns_jqueryui_min_css = Url("fixedColumns.jqueryui.min.css");
+                public static readonly string fixedColumns_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedColumns.semanticui.min.css") ? Url("fixedColumns.semanticui.min.css") : Url("fixedColumns.semanticui.css");
+                public static readonly string fixedColumns_semanticui_min_css = Url("fixedColumns.semanticui.min.css");
+                public static readonly string fixedHeader_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.bootstrap.min.css") ? Url("fixedHeader.bootstrap.min.css") : Url("fixedHeader.bootstrap.css");
+                public static readonly string fixedHeader_bootstrap_min_css = Url("fixedHeader.bootstrap.min.css");
+                public static readonly string fixedHeader_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.bootstrap4.min.css") ? Url("fixedHeader.bootstrap4.min.css") : Url("fixedHeader.bootstrap4.css");
+                public static readonly string fixedHeader_bootstrap4_min_css = Url("fixedHeader.bootstrap4.min.css");
+                public static readonly string fixedHeader_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.dataTables.min.css") ? Url("fixedHeader.dataTables.min.css") : Url("fixedHeader.dataTables.css");
+                public static readonly string fixedHeader_dataTables_min_css = Url("fixedHeader.dataTables.min.css");
+                public static readonly string fixedHeader_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.foundation.min.css") ? Url("fixedHeader.foundation.min.css") : Url("fixedHeader.foundation.css");
+                public static readonly string fixedHeader_foundation_min_css = Url("fixedHeader.foundation.min.css");
+                public static readonly string fixedHeader_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.jqueryui.min.css") ? Url("fixedHeader.jqueryui.min.css") : Url("fixedHeader.jqueryui.css");
+                public static readonly string fixedHeader_jqueryui_min_css = Url("fixedHeader.jqueryui.min.css");
+                public static readonly string fixedHeader_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fixedHeader.semanticui.min.css") ? Url("fixedHeader.semanticui.min.css") : Url("fixedHeader.semanticui.css");
+                public static readonly string fixedHeader_semanticui_min_css = Url("fixedHeader.semanticui.min.css");
+                public static readonly string jquery_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.dataTables.min.css") ? Url("jquery.dataTables.min.css") : Url("jquery.dataTables.css");
+                public static readonly string jquery_dataTables_min_css = Url("jquery.dataTables.min.css");
+                public static readonly string jquery_dataTables_themeroller_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.dataTables_themeroller.min.css") ? Url("jquery.dataTables_themeroller.min.css") : Url("jquery.dataTables_themeroller.css");
+                public static readonly string keyTable_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.bootstrap.min.css") ? Url("keyTable.bootstrap.min.css") : Url("keyTable.bootstrap.css");
+                public static readonly string keyTable_bootstrap_min_css = Url("keyTable.bootstrap.min.css");
+                public static readonly string keyTable_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.bootstrap4.min.css") ? Url("keyTable.bootstrap4.min.css") : Url("keyTable.bootstrap4.css");
+                public static readonly string keyTable_bootstrap4_min_css = Url("keyTable.bootstrap4.min.css");
+                public static readonly string keyTable_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.dataTables.min.css") ? Url("keyTable.dataTables.min.css") : Url("keyTable.dataTables.css");
+                public static readonly string keyTable_dataTables_min_css = Url("keyTable.dataTables.min.css");
+                public static readonly string keyTable_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.foundation.min.css") ? Url("keyTable.foundation.min.css") : Url("keyTable.foundation.css");
+                public static readonly string keyTable_foundation_min_css = Url("keyTable.foundation.min.css");
+                public static readonly string keyTable_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.jqueryui.min.css") ? Url("keyTable.jqueryui.min.css") : Url("keyTable.jqueryui.css");
+                public static readonly string keyTable_jqueryui_min_css = Url("keyTable.jqueryui.min.css");
+                public static readonly string keyTable_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/keyTable.semanticui.min.css") ? Url("keyTable.semanticui.min.css") : Url("keyTable.semanticui.css");
+                public static readonly string keyTable_semanticui_min_css = Url("keyTable.semanticui.min.css");
+                public static readonly string mixins_scss = Url("mixins.scss");
+                public static readonly string responsive_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.bootstrap.min.css") ? Url("responsive.bootstrap.min.css") : Url("responsive.bootstrap.css");
+                public static readonly string responsive_bootstrap_min_css = Url("responsive.bootstrap.min.css");
+                public static readonly string responsive_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.bootstrap4.min.css") ? Url("responsive.bootstrap4.min.css") : Url("responsive.bootstrap4.css");
+                public static readonly string responsive_bootstrap4_min_css = Url("responsive.bootstrap4.min.css");
+                public static readonly string responsive_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.dataTables.min.css") ? Url("responsive.dataTables.min.css") : Url("responsive.dataTables.css");
+                public static readonly string responsive_dataTables_min_css = Url("responsive.dataTables.min.css");
+                public static readonly string responsive_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.foundation.min.css") ? Url("responsive.foundation.min.css") : Url("responsive.foundation.css");
+                public static readonly string responsive_foundation_min_css = Url("responsive.foundation.min.css");
+                public static readonly string responsive_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.jqueryui.min.css") ? Url("responsive.jqueryui.min.css") : Url("responsive.jqueryui.css");
+                public static readonly string responsive_jqueryui_min_css = Url("responsive.jqueryui.min.css");
+                public static readonly string responsive_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/responsive.semanticui.min.css") ? Url("responsive.semanticui.min.css") : Url("responsive.semanticui.css");
+                public static readonly string responsive_semanticui_min_css = Url("responsive.semanticui.min.css");
+                public static readonly string rowGroup_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.bootstrap.min.css") ? Url("rowGroup.bootstrap.min.css") : Url("rowGroup.bootstrap.css");
+                public static readonly string rowGroup_bootstrap_min_css = Url("rowGroup.bootstrap.min.css");
+                public static readonly string rowGroup_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.bootstrap4.min.css") ? Url("rowGroup.bootstrap4.min.css") : Url("rowGroup.bootstrap4.css");
+                public static readonly string rowGroup_bootstrap4_min_css = Url("rowGroup.bootstrap4.min.css");
+                public static readonly string rowGroup_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.dataTables.min.css") ? Url("rowGroup.dataTables.min.css") : Url("rowGroup.dataTables.css");
+                public static readonly string rowGroup_dataTables_min_css = Url("rowGroup.dataTables.min.css");
+                public static readonly string rowGroup_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.foundation.min.css") ? Url("rowGroup.foundation.min.css") : Url("rowGroup.foundation.css");
+                public static readonly string rowGroup_foundation_min_css = Url("rowGroup.foundation.min.css");
+                public static readonly string rowGroup_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.jqueryui.min.css") ? Url("rowGroup.jqueryui.min.css") : Url("rowGroup.jqueryui.css");
+                public static readonly string rowGroup_jqueryui_min_css = Url("rowGroup.jqueryui.min.css");
+                public static readonly string rowGroup_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowGroup.semanticui.min.css") ? Url("rowGroup.semanticui.min.css") : Url("rowGroup.semanticui.css");
+                public static readonly string rowGroup_semanticui_min_css = Url("rowGroup.semanticui.min.css");
+                public static readonly string rowReorder_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.bootstrap.min.css") ? Url("rowReorder.bootstrap.min.css") : Url("rowReorder.bootstrap.css");
+                public static readonly string rowReorder_bootstrap_min_css = Url("rowReorder.bootstrap.min.css");
+                public static readonly string rowReorder_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.bootstrap4.min.css") ? Url("rowReorder.bootstrap4.min.css") : Url("rowReorder.bootstrap4.css");
+                public static readonly string rowReorder_bootstrap4_min_css = Url("rowReorder.bootstrap4.min.css");
+                public static readonly string rowReorder_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.dataTables.min.css") ? Url("rowReorder.dataTables.min.css") : Url("rowReorder.dataTables.css");
+                public static readonly string rowReorder_dataTables_min_css = Url("rowReorder.dataTables.min.css");
+                public static readonly string rowReorder_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.foundation.min.css") ? Url("rowReorder.foundation.min.css") : Url("rowReorder.foundation.css");
+                public static readonly string rowReorder_foundation_min_css = Url("rowReorder.foundation.min.css");
+                public static readonly string rowReorder_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.jqueryui.min.css") ? Url("rowReorder.jqueryui.min.css") : Url("rowReorder.jqueryui.css");
+                public static readonly string rowReorder_jqueryui_min_css = Url("rowReorder.jqueryui.min.css");
+                public static readonly string rowReorder_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/rowReorder.semanticui.min.css") ? Url("rowReorder.semanticui.min.css") : Url("rowReorder.semanticui.css");
+                public static readonly string rowReorder_semanticui_min_css = Url("rowReorder.semanticui.min.css");
+                public static readonly string scroller_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.bootstrap.min.css") ? Url("scroller.bootstrap.min.css") : Url("scroller.bootstrap.css");
+                public static readonly string scroller_bootstrap_min_css = Url("scroller.bootstrap.min.css");
+                public static readonly string scroller_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.bootstrap4.min.css") ? Url("scroller.bootstrap4.min.css") : Url("scroller.bootstrap4.css");
+                public static readonly string scroller_bootstrap4_min_css = Url("scroller.bootstrap4.min.css");
+                public static readonly string scroller_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.dataTables.min.css") ? Url("scroller.dataTables.min.css") : Url("scroller.dataTables.css");
+                public static readonly string scroller_dataTables_min_css = Url("scroller.dataTables.min.css");
+                public static readonly string scroller_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.foundation.min.css") ? Url("scroller.foundation.min.css") : Url("scroller.foundation.css");
+                public static readonly string scroller_foundation_min_css = Url("scroller.foundation.min.css");
+                public static readonly string scroller_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.jqueryui.min.css") ? Url("scroller.jqueryui.min.css") : Url("scroller.jqueryui.css");
+                public static readonly string scroller_jqueryui_min_css = Url("scroller.jqueryui.min.css");
+                public static readonly string scroller_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/scroller.semanticui.min.css") ? Url("scroller.semanticui.min.css") : Url("scroller.semanticui.css");
+                public static readonly string scroller_semanticui_min_css = Url("scroller.semanticui.min.css");
+                public static readonly string select_bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.bootstrap.min.css") ? Url("select.bootstrap.min.css") : Url("select.bootstrap.css");
+                public static readonly string select_bootstrap_min_css = Url("select.bootstrap.min.css");
+                public static readonly string select_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.bootstrap4.min.css") ? Url("select.bootstrap4.min.css") : Url("select.bootstrap4.css");
+                public static readonly string select_bootstrap4_min_css = Url("select.bootstrap4.min.css");
+                public static readonly string select_dataTables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.dataTables.min.css") ? Url("select.dataTables.min.css") : Url("select.dataTables.css");
+                public static readonly string select_dataTables_min_css = Url("select.dataTables.min.css");
+                public static readonly string select_foundation_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.foundation.min.css") ? Url("select.foundation.min.css") : Url("select.foundation.css");
+                public static readonly string select_foundation_min_css = Url("select.foundation.min.css");
+                public static readonly string select_jqueryui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.jqueryui.min.css") ? Url("select.jqueryui.min.css") : Url("select.jqueryui.css");
+                public static readonly string select_jqueryui_min_css = Url("select.jqueryui.min.css");
+                public static readonly string select_semanticui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/select.semanticui.min.css") ? Url("select.semanticui.min.css") : Url("select.semanticui.css");
+                public static readonly string select_semanticui_min_css = Url("select.semanticui.min.css");
+                public static readonly string semanticui_scss = Url("semanticui.scss");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class images {
+                public const string UrlPath = "~/Content/DataTables/images";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string details_close_png = Url("details_close.png");
+                public static readonly string details_open_png = Url("details_open.png");
+                public static readonly string sort_asc_png = Url("sort_asc.png");
+                public static readonly string sort_asc_disabled_png = Url("sort_asc_disabled.png");
+                public static readonly string sort_both_png = Url("sort_both.png");
+                public static readonly string sort_desc_png = Url("sort_desc.png");
+                public static readonly string sort_desc_disabled_png = Url("sort_desc_disabled.png");
+            }
+        
             public static readonly string jquery_dataTables_min_css = Url("jquery.dataTables.min.css");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class swf {
+                public const string UrlPath = "~/Content/DataTables/swf";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string flashExport_swf = Url("flashExport.swf");
+            }
+        
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -142,9 +407,214 @@ namespace Links
             public const string UrlPath = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string _DS_Store = Url(".DS_Store");
+            public static readonly string about_2_jpg = Url("about_2.jpg");
+            public static readonly string alexander_mils_1469813_unsplash_jpg = Url("alexander-mils-1469813-unsplash.jpg");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class flaticon_svg {
+                public const string UrlPath = "~/Content/Images/flaticon-svg";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string backup_txt = Url("backup.txt");
+            }
+        
+            public static readonly string hero_1_jpg = Url("hero_1.jpg");
+            public static readonly string hero_2_jpg = Url("hero_2.jpg");
+            public static readonly string img_1_jpg = Url("img_1.jpg");
+            public static readonly string img_2_jpg = Url("img_2.jpg");
+            public static readonly string img_3_jpg = Url("img_3.jpg");
+            public static readonly string img_4_jpg = Url("img_4.jpg");
+            public static readonly string img_5_jpg = Url("img_5.jpg");
+            public static readonly string person_1_jpg = Url("person_1.jpg");
+            public static readonly string person_2_jpg = Url("person_2.jpg");
+            public static readonly string person_3_jpg = Url("person_3.jpg");
+            public static readonly string person_4_jpg = Url("person_4.jpg");
+            public static readonly string person_5_jpg = Url("person_5.jpg");
+            public static readonly string person_6_jpg = Url("person_6.jpg");
+            public static readonly string person_7_jpg = Url("person_7.jpg");
+            public static readonly string person_8_jpg = Url("person_8.jpg");
+            public static readonly string slide_1_jpg = Url("slide_1.jpg");
+            public static readonly string slide_2_jpg = Url("slide_2.jpg");
+            public static readonly string slide_3_jpg = Url("slide_3.jpg");
+            public static readonly string Untitled_8_jpg = Url("Untitled-8.jpg");
+        }
+    
+        public static readonly string PagedList_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/PagedList.min.css") ? Url("PagedList.min.css") : Url("PagedList.css");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class scss {
+            public const string UrlPath = "~/Content/scss";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string _DS_Store = Url(".DS_Store");
+            public static readonly string _site_base_scss = Url("_site-base.scss");
+            public static readonly string _site_blocks_scss = Url("_site-blocks.scss");
+            public static readonly string _site_navbar_scss = Url("_site-navbar.scss");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class bootsrap {
+                public const string UrlPath = "~/Content/scss/bootsrap";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string _DS_Store = Url(".DS_Store");
+                public static readonly string _alert_scss = Url("_alert.scss");
+                public static readonly string _badge_scss = Url("_badge.scss");
+                public static readonly string _breadcrumb_scss = Url("_breadcrumb.scss");
+                public static readonly string _button_group_scss = Url("_button-group.scss");
+                public static readonly string _buttons_scss = Url("_buttons.scss");
+                public static readonly string _card_scss = Url("_card.scss");
+                public static readonly string _carousel_scss = Url("_carousel.scss");
+                public static readonly string _close_scss = Url("_close.scss");
+                public static readonly string _code_scss = Url("_code.scss");
+                public static readonly string _custom_forms_scss = Url("_custom-forms.scss");
+                public static readonly string _dropdown_scss = Url("_dropdown.scss");
+                public static readonly string _forms_scss = Url("_forms.scss");
+                public static readonly string _functions_scss = Url("_functions.scss");
+                public static readonly string _grid_scss = Url("_grid.scss");
+                public static readonly string _images_scss = Url("_images.scss");
+                public static readonly string _input_group_scss = Url("_input-group.scss");
+                public static readonly string _jumbotron_scss = Url("_jumbotron.scss");
+                public static readonly string _list_group_scss = Url("_list-group.scss");
+                public static readonly string _media_scss = Url("_media.scss");
+                public static readonly string _mixins_scss = Url("_mixins.scss");
+                public static readonly string _modal_scss = Url("_modal.scss");
+                public static readonly string _nav_scss = Url("_nav.scss");
+                public static readonly string _navbar_scss = Url("_navbar.scss");
+                public static readonly string _pagination_scss = Url("_pagination.scss");
+                public static readonly string _popover_scss = Url("_popover.scss");
+                public static readonly string _print_scss = Url("_print.scss");
+                public static readonly string _progress_scss = Url("_progress.scss");
+                public static readonly string _reboot_scss = Url("_reboot.scss");
+                public static readonly string _root_scss = Url("_root.scss");
+                public static readonly string _spinners_scss = Url("_spinners.scss");
+                public static readonly string _tables_scss = Url("_tables.scss");
+                public static readonly string _toasts_scss = Url("_toasts.scss");
+                public static readonly string _tooltip_scss = Url("_tooltip.scss");
+                public static readonly string _transitions_scss = Url("_transitions.scss");
+                public static readonly string _type_scss = Url("_type.scss");
+                public static readonly string _utilities_scss = Url("_utilities.scss");
+                public static readonly string _variables_scss = Url("_variables.scss");
+                public static readonly string bootstrap_grid_scss = Url("bootstrap-grid.scss");
+                public static readonly string bootstrap_reboot_scss = Url("bootstrap-reboot.scss");
+                public static readonly string bootstrap_scss = Url("bootstrap.scss");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class mixins {
+                    public const string UrlPath = "~/Content/scss/bootsrap/mixins";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string _alert_scss = Url("_alert.scss");
+                    public static readonly string _background_variant_scss = Url("_background-variant.scss");
+                    public static readonly string _badge_scss = Url("_badge.scss");
+                    public static readonly string _border_radius_scss = Url("_border-radius.scss");
+                    public static readonly string _box_shadow_scss = Url("_box-shadow.scss");
+                    public static readonly string _breakpoints_scss = Url("_breakpoints.scss");
+                    public static readonly string _buttons_scss = Url("_buttons.scss");
+                    public static readonly string _caret_scss = Url("_caret.scss");
+                    public static readonly string _clearfix_scss = Url("_clearfix.scss");
+                    public static readonly string _deprecate_scss = Url("_deprecate.scss");
+                    public static readonly string _float_scss = Url("_float.scss");
+                    public static readonly string _forms_scss = Url("_forms.scss");
+                    public static readonly string _gradients_scss = Url("_gradients.scss");
+                    public static readonly string _grid_framework_scss = Url("_grid-framework.scss");
+                    public static readonly string _grid_scss = Url("_grid.scss");
+                    public static readonly string _hover_scss = Url("_hover.scss");
+                    public static readonly string _image_scss = Url("_image.scss");
+                    public static readonly string _list_group_scss = Url("_list-group.scss");
+                    public static readonly string _lists_scss = Url("_lists.scss");
+                    public static readonly string _nav_divider_scss = Url("_nav-divider.scss");
+                    public static readonly string _pagination_scss = Url("_pagination.scss");
+                    public static readonly string _reset_text_scss = Url("_reset-text.scss");
+                    public static readonly string _resize_scss = Url("_resize.scss");
+                    public static readonly string _screen_reader_scss = Url("_screen-reader.scss");
+                    public static readonly string _size_scss = Url("_size.scss");
+                    public static readonly string _table_row_scss = Url("_table-row.scss");
+                    public static readonly string _text_emphasis_scss = Url("_text-emphasis.scss");
+                    public static readonly string _text_hide_scss = Url("_text-hide.scss");
+                    public static readonly string _text_truncate_scss = Url("_text-truncate.scss");
+                    public static readonly string _transition_scss = Url("_transition.scss");
+                    public static readonly string _visibility_scss = Url("_visibility.scss");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class utilities {
+                    public const string UrlPath = "~/Content/scss/bootsrap/utilities";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string _align_scss = Url("_align.scss");
+                    public static readonly string _background_scss = Url("_background.scss");
+                    public static readonly string _borders_scss = Url("_borders.scss");
+                    public static readonly string _clearfix_scss = Url("_clearfix.scss");
+                    public static readonly string _display_scss = Url("_display.scss");
+                    public static readonly string _embed_scss = Url("_embed.scss");
+                    public static readonly string _flex_scss = Url("_flex.scss");
+                    public static readonly string _float_scss = Url("_float.scss");
+                    public static readonly string _overflow_scss = Url("_overflow.scss");
+                    public static readonly string _position_scss = Url("_position.scss");
+                    public static readonly string _screenreaders_scss = Url("_screenreaders.scss");
+                    public static readonly string _shadows_scss = Url("_shadows.scss");
+                    public static readonly string _sizing_scss = Url("_sizing.scss");
+                    public static readonly string _spacing_scss = Url("_spacing.scss");
+                    public static readonly string _stretched_link_scss = Url("_stretched-link.scss");
+                    public static readonly string _text_scss = Url("_text.scss");
+                    public static readonly string _visibility_scss = Url("_visibility.scss");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class vendor {
+                    public const string UrlPath = "~/Content/scss/bootsrap/vendor";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string _rfs_scss = Url("_rfs.scss");
+                }
+            
+            }
+        
+            public static readonly string style_scss = Url("style.scss");
         }
     
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Style {
+            public const string UrlPath = "~/Content/Style";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class css_ {
+                public const string UrlPath = "~/Content/Style/css_";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string _DS_Store = Url(".DS_Store");
+                public static readonly string aos_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/aos.min.css") ? Url("aos.min.css") : Url("aos.css");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class bootsrap {
+                    public const string UrlPath = "~/Content/Style/css_/bootsrap";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string bootstrap_grid_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-grid.min.css") ? Url("bootstrap-grid.min.css") : Url("bootstrap-grid.css");
+                    public static readonly string bootstrap_reboot_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-reboot.min.css") ? Url("bootstrap-reboot.min.css") : Url("bootstrap-reboot.css");
+                    public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+                    public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
+                }
+            
+                public static readonly string bootstrap_datepicker_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-datepicker.min.css") ? Url("bootstrap-datepicker.min.css") : Url("bootstrap-datepicker.css");
+                public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+                public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
+                public static readonly string jquery_ui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-ui.min.css") ? Url("jquery-ui.min.css") : Url("jquery-ui.css");
+                public static readonly string jquery_fancybox_min_css = Url("jquery.fancybox.min.css");
+                public static readonly string magnific_popup_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/magnific-popup.min.css") ? Url("magnific-popup.min.css") : Url("magnific-popup.css");
+                public static readonly string mediaelementplayer_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mediaelementplayer.min.css") ? Url("mediaelementplayer.min.css") : Url("mediaelementplayer.css");
+                public static readonly string owl_carousel_min_css = Url("owl.carousel.min.css");
+                public static readonly string owl_theme_default_min_css = Url("owl.theme.default.min.css");
+                public static readonly string style_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/style.min.css") ? Url("style.min.css") : Url("style.css");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class fonts_ {
+                public const string UrlPath = "~/Content/Style/fonts_";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            }
+        
+        }
+    
     }
 
     
@@ -153,6 +623,24 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class fontawesome_ 
+            {
+                public static class Assets
+                {
+                    public const string all_js = "~/Scripts/fontawesome_/all.js"; 
+                    public const string all_min_js = "~/Scripts/fontawesome_/all.min.js"; 
+                    public const string brands_js = "~/Scripts/fontawesome_/brands.js"; 
+                    public const string brands_min_js = "~/Scripts/fontawesome_/brands.min.js"; 
+                    public const string fontawesome_js = "~/Scripts/fontawesome_/fontawesome.js"; 
+                    public const string fontawesome_min_js = "~/Scripts/fontawesome_/fontawesome.min.js"; 
+                    public const string regular_js = "~/Scripts/fontawesome_/regular.js"; 
+                    public const string regular_min_js = "~/Scripts/fontawesome_/regular.min.js"; 
+                    public const string solid_js = "~/Scripts/fontawesome_/solid.js"; 
+                    public const string solid_min_js = "~/Scripts/fontawesome_/solid.min.js"; 
+                    public const string v4_shims_js = "~/Scripts/fontawesome_/v4-shims.js"; 
+                    public const string v4_shims_min_js = "~/Scripts/fontawesome_/v4-shims.min.js"; 
+                }
+            }
             public static partial class Grid 
             {
                 public static class Assets
@@ -162,26 +650,254 @@ namespace Links
                     public const string jszip_min_js = "~/Scripts/Grid/jszip.min.js"; 
                 }
             }
+            public static partial class js_ 
+            {
+                public static class Assets
+                {
+                    public const string aos_js = "~/Scripts/js_/aos.js"; 
+                    public const string bootstrap_datepicker_min_js = "~/Scripts/js_/bootstrap-datepicker.min.js"; 
+                    public const string bootstrap_min_js = "~/Scripts/js_/bootstrap.min.js"; 
+                    public const string isotope_pkgd_min_js = "~/Scripts/js_/isotope.pkgd.min.js"; 
+                    public const string jquery_3_3_1_min_js = "~/Scripts/js_/jquery-3.3.1.min.js"; 
+                    public const string jquery_migrate_3_0_1_min_js = "~/Scripts/js_/jquery-migrate-3.0.1.min.js"; 
+                    public const string jquery_ui_js = "~/Scripts/js_/jquery-ui.js"; 
+                    public const string jquery_countdown_min_js = "~/Scripts/js_/jquery.countdown.min.js"; 
+                    public const string jquery_easing_1_3_js = "~/Scripts/js_/jquery.easing.1.3.js"; 
+                    public const string jquery_fancybox_min_js = "~/Scripts/js_/jquery.fancybox.min.js"; 
+                    public const string jquery_magnific_popup_min_js = "~/Scripts/js_/jquery.magnific-popup.min.js"; 
+                    public const string jquery_stellar_min_js = "~/Scripts/js_/jquery.stellar.min.js"; 
+                    public const string jquery_sticky_js = "~/Scripts/js_/jquery.sticky.js"; 
+                    public const string main_js = "~/Scripts/js_/main.js"; 
+                    public const string mediaelement_and_player_min_js = "~/Scripts/js_/mediaelement-and-player.min.js"; 
+                    public const string owl_carousel_min_js = "~/Scripts/js_/owl.carousel.min.js"; 
+                    public const string popper_min_js = "~/Scripts/js_/popper.min.js"; 
+                    public const string slick_min_js = "~/Scripts/js_/slick.min.js"; 
+                    public const string typed_js = "~/Scripts/js_/typed.js"; 
+                }
+            }
+            public static partial class Plugins 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Src_ 
+            {
+                public static class Assets
+                {
+                    public const string index_js = "~/Scripts/Src_/index.js"; 
+                }
+            }
+            public static partial class User_ 
+            {
+                public static class Assets
+                {
+                    public const string DataTables_js = "~/Scripts/User_/DataTables.js"; 
+                    public const string DatePicker_js = "~/Scripts/User_/DatePicker.js"; 
+                    public const string ErrorHandler_js = "~/Scripts/User_/ErrorHandler.js"; 
+                    public const string global_js = "~/Scripts/User_/global.js"; 
+                    public const string global_min_js = "~/Scripts/User_/global.min.js"; 
+                    public const string ProductSlider_js = "~/Scripts/User_/ProductSlider.js"; 
+                    public const string Select2_js = "~/Scripts/User_/Select2.js"; 
+                }
+            }
             public static class Assets
             {
+                public const string bootstrap_select_js = "~/Scripts/bootstrap-select.js"; 
                 public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
                 public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
+                public const string chosen_jquery_js = "~/Scripts/chosen.jquery.js"; 
+                public const string chosen_jquery_min_js = "~/Scripts/chosen.jquery.min.js"; 
                 public const string jquery_3_3_1_intellisense_js = "~/Scripts/jquery-3.3.1.intellisense.js"; 
                 public const string jquery_3_3_1_js = "~/Scripts/jquery-3.3.1.js"; 
                 public const string jquery_3_3_1_min_js = "~/Scripts/jquery-3.3.1.min.js"; 
                 public const string jquery_3_3_1_slim_js = "~/Scripts/jquery-3.3.1.slim.js"; 
                 public const string jquery_3_3_1_slim_min_js = "~/Scripts/jquery-3.3.1.slim.min.js"; 
+                public const string jquery_nice_select_js = "~/Scripts/jquery.nice-select.js"; 
+                public const string jquery_steps_js = "~/Scripts/jquery.steps.js"; 
+                public const string jquery_steps_min_js = "~/Scripts/jquery.steps.min.js"; 
                 public const string jquery_validate_js = "~/Scripts/jquery.validate.js"; 
                 public const string jquery_validate_min_js = "~/Scripts/jquery.validate.min.js"; 
                 public const string jquery_validate_unobtrusive_js = "~/Scripts/jquery.validate.unobtrusive.js"; 
                 public const string jquery_validate_unobtrusive_min_js = "~/Scripts/jquery.validate.unobtrusive.min.js"; 
+                public const string main_js = "~/Scripts/main.js"; 
                 public const string modernizr_2_8_3_js = "~/Scripts/modernizr-2.8.3.js"; 
+                public const string MyCustomValidation_js = "~/Scripts/MyCustomValidation.js"; 
+                public const string select2_js = "~/Scripts/select2.js"; 
+                public const string select2_min_js = "~/Scripts/select2.min.js"; 
             }
         }
         public static partial class Content 
         {
             public static partial class DataTables 
             {
+                public static partial class css 
+                {
+                    public static class Assets
+                    {
+                        public const string autoFill_bootstrap_css = "~/Content/DataTables/css/autoFill.bootstrap.css";
+                        public const string autoFill_bootstrap_min_css = "~/Content/DataTables/css/autoFill.bootstrap.min.css";
+                        public const string autoFill_bootstrap4_css = "~/Content/DataTables/css/autoFill.bootstrap4.css";
+                        public const string autoFill_bootstrap4_min_css = "~/Content/DataTables/css/autoFill.bootstrap4.min.css";
+                        public const string autoFill_dataTables_css = "~/Content/DataTables/css/autoFill.dataTables.css";
+                        public const string autoFill_dataTables_min_css = "~/Content/DataTables/css/autoFill.dataTables.min.css";
+                        public const string autoFill_foundation_css = "~/Content/DataTables/css/autoFill.foundation.css";
+                        public const string autoFill_foundation_min_css = "~/Content/DataTables/css/autoFill.foundation.min.css";
+                        public const string autoFill_jqueryui_css = "~/Content/DataTables/css/autoFill.jqueryui.css";
+                        public const string autoFill_jqueryui_min_css = "~/Content/DataTables/css/autoFill.jqueryui.min.css";
+                        public const string autoFill_semanticui_css = "~/Content/DataTables/css/autoFill.semanticui.css";
+                        public const string autoFill_semanticui_min_css = "~/Content/DataTables/css/autoFill.semanticui.min.css";
+                        public const string buttons_bootstrap_css = "~/Content/DataTables/css/buttons.bootstrap.css";
+                        public const string buttons_bootstrap_min_css = "~/Content/DataTables/css/buttons.bootstrap.min.css";
+                        public const string buttons_bootstrap4_css = "~/Content/DataTables/css/buttons.bootstrap4.css";
+                        public const string buttons_bootstrap4_min_css = "~/Content/DataTables/css/buttons.bootstrap4.min.css";
+                        public const string buttons_dataTables_css = "~/Content/DataTables/css/buttons.dataTables.css";
+                        public const string buttons_dataTables_min_css = "~/Content/DataTables/css/buttons.dataTables.min.css";
+                        public const string buttons_foundation_css = "~/Content/DataTables/css/buttons.foundation.css";
+                        public const string buttons_foundation_min_css = "~/Content/DataTables/css/buttons.foundation.min.css";
+                        public const string buttons_jqueryui_css = "~/Content/DataTables/css/buttons.jqueryui.css";
+                        public const string buttons_jqueryui_min_css = "~/Content/DataTables/css/buttons.jqueryui.min.css";
+                        public const string buttons_semanticui_css = "~/Content/DataTables/css/buttons.semanticui.css";
+                        public const string buttons_semanticui_min_css = "~/Content/DataTables/css/buttons.semanticui.min.css";
+                        public const string colReorder_bootstrap_css = "~/Content/DataTables/css/colReorder.bootstrap.css";
+                        public const string colReorder_bootstrap_min_css = "~/Content/DataTables/css/colReorder.bootstrap.min.css";
+                        public const string colReorder_bootstrap4_css = "~/Content/DataTables/css/colReorder.bootstrap4.css";
+                        public const string colReorder_bootstrap4_min_css = "~/Content/DataTables/css/colReorder.bootstrap4.min.css";
+                        public const string colReorder_dataTables_css = "~/Content/DataTables/css/colReorder.dataTables.css";
+                        public const string colReorder_dataTables_min_css = "~/Content/DataTables/css/colReorder.dataTables.min.css";
+                        public const string colReorder_foundation_css = "~/Content/DataTables/css/colReorder.foundation.css";
+                        public const string colReorder_foundation_min_css = "~/Content/DataTables/css/colReorder.foundation.min.css";
+                        public const string colReorder_jqueryui_css = "~/Content/DataTables/css/colReorder.jqueryui.css";
+                        public const string colReorder_jqueryui_min_css = "~/Content/DataTables/css/colReorder.jqueryui.min.css";
+                        public const string colReorder_semanticui_css = "~/Content/DataTables/css/colReorder.semanticui.css";
+                        public const string colReorder_semanticui_min_css = "~/Content/DataTables/css/colReorder.semanticui.min.css";
+                        public const string dataTables_bootstrap_css = "~/Content/DataTables/css/dataTables.bootstrap.css";
+                        public const string dataTables_bootstrap_min_css = "~/Content/DataTables/css/dataTables.bootstrap.min.css";
+                        public const string dataTables_bootstrap4_css = "~/Content/DataTables/css/dataTables.bootstrap4.css";
+                        public const string dataTables_bootstrap4_min_css = "~/Content/DataTables/css/dataTables.bootstrap4.min.css";
+                        public const string dataTables_foundation_css = "~/Content/DataTables/css/dataTables.foundation.css";
+                        public const string dataTables_foundation_min_css = "~/Content/DataTables/css/dataTables.foundation.min.css";
+                        public const string dataTables_jqueryui_css = "~/Content/DataTables/css/dataTables.jqueryui.css";
+                        public const string dataTables_jqueryui_min_css = "~/Content/DataTables/css/dataTables.jqueryui.min.css";
+                        public const string dataTables_material_css = "~/Content/DataTables/css/dataTables.material.css";
+                        public const string dataTables_material_min_css = "~/Content/DataTables/css/dataTables.material.min.css";
+                        public const string dataTables_semanticui_css = "~/Content/DataTables/css/dataTables.semanticui.css";
+                        public const string dataTables_semanticui_min_css = "~/Content/DataTables/css/dataTables.semanticui.min.css";
+                        public const string dataTables_uikit_css = "~/Content/DataTables/css/dataTables.uikit.css";
+                        public const string dataTables_uikit_min_css = "~/Content/DataTables/css/dataTables.uikit.min.css";
+                        public const string fixedColumns_bootstrap_css = "~/Content/DataTables/css/fixedColumns.bootstrap.css";
+                        public const string fixedColumns_bootstrap_min_css = "~/Content/DataTables/css/fixedColumns.bootstrap.min.css";
+                        public const string fixedColumns_bootstrap4_css = "~/Content/DataTables/css/fixedColumns.bootstrap4.css";
+                        public const string fixedColumns_bootstrap4_min_css = "~/Content/DataTables/css/fixedColumns.bootstrap4.min.css";
+                        public const string fixedColumns_dataTables_css = "~/Content/DataTables/css/fixedColumns.dataTables.css";
+                        public const string fixedColumns_dataTables_min_css = "~/Content/DataTables/css/fixedColumns.dataTables.min.css";
+                        public const string fixedColumns_foundation_css = "~/Content/DataTables/css/fixedColumns.foundation.css";
+                        public const string fixedColumns_foundation_min_css = "~/Content/DataTables/css/fixedColumns.foundation.min.css";
+                        public const string fixedColumns_jqueryui_css = "~/Content/DataTables/css/fixedColumns.jqueryui.css";
+                        public const string fixedColumns_jqueryui_min_css = "~/Content/DataTables/css/fixedColumns.jqueryui.min.css";
+                        public const string fixedColumns_semanticui_css = "~/Content/DataTables/css/fixedColumns.semanticui.css";
+                        public const string fixedColumns_semanticui_min_css = "~/Content/DataTables/css/fixedColumns.semanticui.min.css";
+                        public const string fixedHeader_bootstrap_css = "~/Content/DataTables/css/fixedHeader.bootstrap.css";
+                        public const string fixedHeader_bootstrap_min_css = "~/Content/DataTables/css/fixedHeader.bootstrap.min.css";
+                        public const string fixedHeader_bootstrap4_css = "~/Content/DataTables/css/fixedHeader.bootstrap4.css";
+                        public const string fixedHeader_bootstrap4_min_css = "~/Content/DataTables/css/fixedHeader.bootstrap4.min.css";
+                        public const string fixedHeader_dataTables_css = "~/Content/DataTables/css/fixedHeader.dataTables.css";
+                        public const string fixedHeader_dataTables_min_css = "~/Content/DataTables/css/fixedHeader.dataTables.min.css";
+                        public const string fixedHeader_foundation_css = "~/Content/DataTables/css/fixedHeader.foundation.css";
+                        public const string fixedHeader_foundation_min_css = "~/Content/DataTables/css/fixedHeader.foundation.min.css";
+                        public const string fixedHeader_jqueryui_css = "~/Content/DataTables/css/fixedHeader.jqueryui.css";
+                        public const string fixedHeader_jqueryui_min_css = "~/Content/DataTables/css/fixedHeader.jqueryui.min.css";
+                        public const string fixedHeader_semanticui_css = "~/Content/DataTables/css/fixedHeader.semanticui.css";
+                        public const string fixedHeader_semanticui_min_css = "~/Content/DataTables/css/fixedHeader.semanticui.min.css";
+                        public const string jquery_dataTables_css = "~/Content/DataTables/css/jquery.dataTables.css";
+                        public const string jquery_dataTables_min_css = "~/Content/DataTables/css/jquery.dataTables.min.css";
+                        public const string jquery_dataTables_themeroller_css = "~/Content/DataTables/css/jquery.dataTables_themeroller.css";
+                        public const string keyTable_bootstrap_css = "~/Content/DataTables/css/keyTable.bootstrap.css";
+                        public const string keyTable_bootstrap_min_css = "~/Content/DataTables/css/keyTable.bootstrap.min.css";
+                        public const string keyTable_bootstrap4_css = "~/Content/DataTables/css/keyTable.bootstrap4.css";
+                        public const string keyTable_bootstrap4_min_css = "~/Content/DataTables/css/keyTable.bootstrap4.min.css";
+                        public const string keyTable_dataTables_css = "~/Content/DataTables/css/keyTable.dataTables.css";
+                        public const string keyTable_dataTables_min_css = "~/Content/DataTables/css/keyTable.dataTables.min.css";
+                        public const string keyTable_foundation_css = "~/Content/DataTables/css/keyTable.foundation.css";
+                        public const string keyTable_foundation_min_css = "~/Content/DataTables/css/keyTable.foundation.min.css";
+                        public const string keyTable_jqueryui_css = "~/Content/DataTables/css/keyTable.jqueryui.css";
+                        public const string keyTable_jqueryui_min_css = "~/Content/DataTables/css/keyTable.jqueryui.min.css";
+                        public const string keyTable_semanticui_css = "~/Content/DataTables/css/keyTable.semanticui.css";
+                        public const string keyTable_semanticui_min_css = "~/Content/DataTables/css/keyTable.semanticui.min.css";
+                        public const string responsive_bootstrap_css = "~/Content/DataTables/css/responsive.bootstrap.css";
+                        public const string responsive_bootstrap_min_css = "~/Content/DataTables/css/responsive.bootstrap.min.css";
+                        public const string responsive_bootstrap4_css = "~/Content/DataTables/css/responsive.bootstrap4.css";
+                        public const string responsive_bootstrap4_min_css = "~/Content/DataTables/css/responsive.bootstrap4.min.css";
+                        public const string responsive_dataTables_css = "~/Content/DataTables/css/responsive.dataTables.css";
+                        public const string responsive_dataTables_min_css = "~/Content/DataTables/css/responsive.dataTables.min.css";
+                        public const string responsive_foundation_css = "~/Content/DataTables/css/responsive.foundation.css";
+                        public const string responsive_foundation_min_css = "~/Content/DataTables/css/responsive.foundation.min.css";
+                        public const string responsive_jqueryui_css = "~/Content/DataTables/css/responsive.jqueryui.css";
+                        public const string responsive_jqueryui_min_css = "~/Content/DataTables/css/responsive.jqueryui.min.css";
+                        public const string responsive_semanticui_css = "~/Content/DataTables/css/responsive.semanticui.css";
+                        public const string responsive_semanticui_min_css = "~/Content/DataTables/css/responsive.semanticui.min.css";
+                        public const string rowGroup_bootstrap_css = "~/Content/DataTables/css/rowGroup.bootstrap.css";
+                        public const string rowGroup_bootstrap_min_css = "~/Content/DataTables/css/rowGroup.bootstrap.min.css";
+                        public const string rowGroup_bootstrap4_css = "~/Content/DataTables/css/rowGroup.bootstrap4.css";
+                        public const string rowGroup_bootstrap4_min_css = "~/Content/DataTables/css/rowGroup.bootstrap4.min.css";
+                        public const string rowGroup_dataTables_css = "~/Content/DataTables/css/rowGroup.dataTables.css";
+                        public const string rowGroup_dataTables_min_css = "~/Content/DataTables/css/rowGroup.dataTables.min.css";
+                        public const string rowGroup_foundation_css = "~/Content/DataTables/css/rowGroup.foundation.css";
+                        public const string rowGroup_foundation_min_css = "~/Content/DataTables/css/rowGroup.foundation.min.css";
+                        public const string rowGroup_jqueryui_css = "~/Content/DataTables/css/rowGroup.jqueryui.css";
+                        public const string rowGroup_jqueryui_min_css = "~/Content/DataTables/css/rowGroup.jqueryui.min.css";
+                        public const string rowGroup_semanticui_css = "~/Content/DataTables/css/rowGroup.semanticui.css";
+                        public const string rowGroup_semanticui_min_css = "~/Content/DataTables/css/rowGroup.semanticui.min.css";
+                        public const string rowReorder_bootstrap_css = "~/Content/DataTables/css/rowReorder.bootstrap.css";
+                        public const string rowReorder_bootstrap_min_css = "~/Content/DataTables/css/rowReorder.bootstrap.min.css";
+                        public const string rowReorder_bootstrap4_css = "~/Content/DataTables/css/rowReorder.bootstrap4.css";
+                        public const string rowReorder_bootstrap4_min_css = "~/Content/DataTables/css/rowReorder.bootstrap4.min.css";
+                        public const string rowReorder_dataTables_css = "~/Content/DataTables/css/rowReorder.dataTables.css";
+                        public const string rowReorder_dataTables_min_css = "~/Content/DataTables/css/rowReorder.dataTables.min.css";
+                        public const string rowReorder_foundation_css = "~/Content/DataTables/css/rowReorder.foundation.css";
+                        public const string rowReorder_foundation_min_css = "~/Content/DataTables/css/rowReorder.foundation.min.css";
+                        public const string rowReorder_jqueryui_css = "~/Content/DataTables/css/rowReorder.jqueryui.css";
+                        public const string rowReorder_jqueryui_min_css = "~/Content/DataTables/css/rowReorder.jqueryui.min.css";
+                        public const string rowReorder_semanticui_css = "~/Content/DataTables/css/rowReorder.semanticui.css";
+                        public const string rowReorder_semanticui_min_css = "~/Content/DataTables/css/rowReorder.semanticui.min.css";
+                        public const string scroller_bootstrap_css = "~/Content/DataTables/css/scroller.bootstrap.css";
+                        public const string scroller_bootstrap_min_css = "~/Content/DataTables/css/scroller.bootstrap.min.css";
+                        public const string scroller_bootstrap4_css = "~/Content/DataTables/css/scroller.bootstrap4.css";
+                        public const string scroller_bootstrap4_min_css = "~/Content/DataTables/css/scroller.bootstrap4.min.css";
+                        public const string scroller_dataTables_css = "~/Content/DataTables/css/scroller.dataTables.css";
+                        public const string scroller_dataTables_min_css = "~/Content/DataTables/css/scroller.dataTables.min.css";
+                        public const string scroller_foundation_css = "~/Content/DataTables/css/scroller.foundation.css";
+                        public const string scroller_foundation_min_css = "~/Content/DataTables/css/scroller.foundation.min.css";
+                        public const string scroller_jqueryui_css = "~/Content/DataTables/css/scroller.jqueryui.css";
+                        public const string scroller_jqueryui_min_css = "~/Content/DataTables/css/scroller.jqueryui.min.css";
+                        public const string scroller_semanticui_css = "~/Content/DataTables/css/scroller.semanticui.css";
+                        public const string scroller_semanticui_min_css = "~/Content/DataTables/css/scroller.semanticui.min.css";
+                        public const string select_bootstrap_css = "~/Content/DataTables/css/select.bootstrap.css";
+                        public const string select_bootstrap_min_css = "~/Content/DataTables/css/select.bootstrap.min.css";
+                        public const string select_bootstrap4_css = "~/Content/DataTables/css/select.bootstrap4.css";
+                        public const string select_bootstrap4_min_css = "~/Content/DataTables/css/select.bootstrap4.min.css";
+                        public const string select_dataTables_css = "~/Content/DataTables/css/select.dataTables.css";
+                        public const string select_dataTables_min_css = "~/Content/DataTables/css/select.dataTables.min.css";
+                        public const string select_foundation_css = "~/Content/DataTables/css/select.foundation.css";
+                        public const string select_foundation_min_css = "~/Content/DataTables/css/select.foundation.min.css";
+                        public const string select_jqueryui_css = "~/Content/DataTables/css/select.jqueryui.css";
+                        public const string select_jqueryui_min_css = "~/Content/DataTables/css/select.jqueryui.min.css";
+                        public const string select_semanticui_css = "~/Content/DataTables/css/select.semanticui.css";
+                        public const string select_semanticui_min_css = "~/Content/DataTables/css/select.semanticui.min.css";
+                    }
+                }
+                public static partial class images 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class swf 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static class Assets
                 {
                     public const string jquery_dataTables_min_css = "~/Content/DataTables/jquery.dataTables.min.css";
@@ -189,6 +905,79 @@ namespace Links
             }
             public static partial class Images 
             {
+                public static partial class flaticon_svg 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static partial class scss 
+            {
+                public static partial class bootsrap 
+                {
+                    public static partial class mixins 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class utilities 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class vendor 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Style 
+            {
+                public static partial class css_ 
+                {
+                    public static partial class bootsrap 
+                    {
+                        public static class Assets
+                        {
+                            public const string bootstrap_grid_css = "~/Content/Style/css_/bootsrap/bootstrap-grid.css";
+                            public const string bootstrap_reboot_css = "~/Content/Style/css_/bootsrap/bootstrap-reboot.css";
+                            public const string bootstrap_css = "~/Content/Style/css_/bootsrap/bootstrap.css";
+                        }
+                    }
+                    public static class Assets
+                    {
+                        public const string aos_css = "~/Content/Style/css_/aos.css";
+                        public const string bootstrap_datepicker_css = "~/Content/Style/css_/bootstrap-datepicker.css";
+                        public const string bootstrap_min_css = "~/Content/Style/css_/bootstrap.min.css";
+                        public const string jquery_ui_css = "~/Content/Style/css_/jquery-ui.css";
+                        public const string jquery_fancybox_min_css = "~/Content/Style/css_/jquery.fancybox.min.css";
+                        public const string magnific_popup_css = "~/Content/Style/css_/magnific-popup.css";
+                        public const string mediaelementplayer_css = "~/Content/Style/css_/mediaelementplayer.css";
+                        public const string owl_carousel_min_css = "~/Content/Style/css_/owl.carousel.min.css";
+                        public const string owl_theme_default_min_css = "~/Content/Style/css_/owl.theme.default.min.css";
+                        public const string style_css = "~/Content/Style/css_/style.css";
+                    }
+                }
+                public static partial class fonts_ 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static class Assets
                 {
                 }
@@ -199,6 +988,7 @@ namespace Links
                 public const string bootstrap_theme_min_css = "~/Content/bootstrap-theme.min.css";
                 public const string bootstrap_css = "~/Content/bootstrap.css";
                 public const string bootstrap_min_css = "~/Content/bootstrap.min.css";
+                public const string PagedList_css = "~/Content/PagedList.css";
                 public const string Site_css = "~/Content/Site.css";
             }
         }

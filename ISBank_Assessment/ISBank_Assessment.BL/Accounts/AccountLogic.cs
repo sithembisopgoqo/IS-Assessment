@@ -146,7 +146,7 @@ namespace ISBank_Assessment.BL
             account.person_code = AccountObj.person_code;
             account.account_number = AccountObj.account_number;
             account.outstanding_balance = AccountObj.outstanding_balance;
-            account.Status.StatusTypes = AccountObj.Status.StatusTypes;
+            account.StatusId = AccountObj.StatusId;
 
             accountRepository.Update(account);
             unitOfWork.Save();
@@ -163,7 +163,12 @@ namespace ISBank_Assessment.BL
         /// <param name="Account">Account object to remove</param>
         public void RemoveAccount(int Code)
         {
-          
+            TransactionLogic transactionLogic = new TransactionLogic(unitOfWork);
+            var checkAccountTransactionsExist = transactionLogic.GetAllTransactions(Code).ToList();
+            if (checkAccountTransactionsExist.Any())
+            {
+                throw new Exception(string.Format("You cannot delete this account because the transaction exist", checkAccountTransactionsExist.FirstOrDefault().code));
+            }
             accountRepository.Delete(Code);
             unitOfWork.Save();
         }
@@ -172,6 +177,29 @@ namespace ISBank_Assessment.BL
 
 
         #region Validations
+
+        public bool CheckAccountByCode(int Code)
+        {
+            bool accountExist = false;
+
+            var Account = accountRepository.GetAll().Where(x => x.code == Code).ToList();
+            try
+            {
+                if (Account.Any())
+                {
+                    accountExist = true;
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return accountExist;
+        }
+
         //Avoiding - duplicated account numbers.
         public bool CheckIfAccountExist(string AccountNumber)
         {

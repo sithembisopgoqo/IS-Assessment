@@ -110,7 +110,7 @@ namespace ISBank_Assessment.UI.Controllers
             return RedirectToAction(MVC.Account.GetAccounts(accountEntity.PersonCode));
         }
 
-        [HttpPost]
+        //[HttpPost]
         [OutputCache(Duration = 0, NoStore = false)]
         public virtual async Task<ActionResult> DeleteAccount(int? AccountCode)
         {
@@ -138,14 +138,17 @@ namespace ISBank_Assessment.UI.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult TransactionDetails(int? Code,int PersonCode)
+        public virtual ActionResult TransactionDetails(int? Code,int? PersonCode)
         {
             Account accountClient = new Account(ServiceFactory.GetClient());
             EditTransactionsModel model = new EditTransactionsModel();
 
             Person personClient = new Person(ServiceFactory.GetClient());
-
-            var AcccountCode = accountClient.GetAllAccounts(PersonCode).ToList().FirstOrDefault().Code;
+            if (PersonCode != null)
+            {
+                var AcccountCode = accountClient.GetAllAccounts(PersonCode.Value).ToList().FirstOrDefault().Code;
+                model.AccountCode = AcccountCode;
+            }
 
             if (Code == null)
             {
@@ -153,14 +156,14 @@ namespace ISBank_Assessment.UI.Controllers
             }
 
             model.Code = (int)Code;
-            model.AccountCode = AcccountCode;
+            
             if (Code.HasValue && Code.Value > 0)
             {
 
                 TransactionsEntity transactionsEntity = accountClient.GetTransactionbyCode(Code.Value);
                 model.Code = (int)transactionsEntity.Code;
                 model.AccountCode = transactionsEntity.AccountCode;
-                model.TransactionDate = transactionsEntity.TransactionDate;
+                //model.TransactionDate = transactionsEntity.TransactionDate.ToString();
                 model.Amount = transactionsEntity.Amount;
                 model.Description = transactionsEntity.Description;
                 //The user is never allowed to change the capture date.
@@ -180,7 +183,8 @@ namespace ISBank_Assessment.UI.Controllers
             TransactionsEntity transactionEntity = new TransactionsEntity();
 
             transactionEntity.AccountCode = model.AccountCode;
-            transactionEntity.TransactionDate = model.TransactionDate;
+            transactionEntity.TransactionDate = Convert.ToDateTime(model.TransactionDate);
+            transactionEntity.CaptureDate= Convert.ToDateTime(model.CaptureDate);
             transactionEntity.Amount = model.Amount;
             transactionEntity.Description = model.Description;
 
@@ -198,7 +202,7 @@ namespace ISBank_Assessment.UI.Controllers
             AccountEntity accountEntity = new AccountEntity();
 
             var account = accountClient.GetAccounts((int)transactionEntity.AccountCode);
-            if (transactionEntity.Amount > account.OutstandingBalance)
+            if (account.OutstandingBalance> transactionEntity.Amount)
             {
                 account.OutstandingBalance = account.OutstandingBalance - transactionEntity.Amount;
                 var updateAccount = accountClient.ModifyAccountAsync(account, account.Code.Value);
