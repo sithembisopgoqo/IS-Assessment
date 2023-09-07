@@ -14,17 +14,19 @@ namespace ISBank_Assessment.BL
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper _mapper;
         private readonly GenericRepository<Person> personRepository;
-
+        private readonly GenericRepository<Account> accountRepository;
         public PersonLogic(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             this.personRepository = unitOfWork.GetRepository<Person>();
+            this.accountRepository = unitOfWork.GetRepository<Account>();
         }
 
         public PersonLogic(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.personRepository = unitOfWork.GetRepository<Person>();
+            this.accountRepository = unitOfWork.GetRepository<Account>();
             this._mapper = mapper;
         }
 
@@ -38,9 +40,12 @@ namespace ISBank_Assessment.BL
         public List<PersonEntity> GetAllPersons(int UserId, string SearchText = null)
         {
 
+
             var filtered = personRepository.Get(x => x.UserId == UserId).ToList();
 
             var query = (from c in filtered
+                         // Join to get the account number of the person
+                         //join a in accountRepository.GetAll().ToList() on c.code equals a.person_code
                          select new PersonEntity()
                          {
                              Code=c.code,
@@ -48,7 +53,7 @@ namespace ISBank_Assessment.BL
                              Name = c.name,
                              IDNumber = c.id_number,
                              Surname = c.surname,
-                             AccountNumber=""
+                             AccountNumber=""//a.account_number
 
                          }).ToList();
 
@@ -85,9 +90,9 @@ namespace ISBank_Assessment.BL
             //throw new NotSupportedException();
 
             #endregion Validation
+            var person = personRepository.Get(x => x.code == Code && x.UserId == UserId).SingleOrDefault();
 
-
-            return personRepository.Get(x => x.code == Code && x.UserId == UserId).SingleOrDefault();
+            return person;
         }
 
         #endregion

@@ -81,6 +81,13 @@ namespace ISBank_Assessment.UI.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DeleteAccount()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteAccount);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetTransactions()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetTransactions);
@@ -143,6 +150,7 @@ namespace ISBank_Assessment.UI.Controllers
             public readonly string GetAccounts = "GetAccounts";
             public readonly string AccountDetails = "AccountDetails";
             public readonly string SaveAccount = "SaveAccount";
+            public readonly string DeleteAccount = "DeleteAccount";
             public readonly string GetTransactions = "GetTransactions";
             public readonly string TransactionDetails = "TransactionDetails";
             public readonly string SaveTransactions = "SaveTransactions";
@@ -158,6 +166,7 @@ namespace ISBank_Assessment.UI.Controllers
             public const string GetAccounts = "GetAccounts";
             public const string AccountDetails = "AccountDetails";
             public const string SaveAccount = "SaveAccount";
+            public const string DeleteAccount = "DeleteAccount";
             public const string GetTransactions = "GetTransactions";
             public const string TransactionDetails = "TransactionDetails";
             public const string SaveTransactions = "SaveTransactions";
@@ -193,6 +202,14 @@ namespace ISBank_Assessment.UI.Controllers
         public class ActionParamsClass_SaveAccount
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_DeleteAccount s_params_DeleteAccount = new ActionParamsClass_DeleteAccount();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteAccount DeleteAccountParams { get { return s_params_DeleteAccount; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteAccount
+        {
+            public readonly string AccountCode = "AccountCode";
         }
         static readonly ActionParamsClass_GetTransactions s_params_GetTransactions = new ActionParamsClass_GetTransactions();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -331,6 +348,18 @@ namespace ISBank_Assessment.UI.Controllers
         }
 
         [NonAction]
+        partial void DeleteAccountOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? AccountCode);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DeleteAccount(int? AccountCode)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteAccount);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "AccountCode", AccountCode);
+            DeleteAccountOverride(callInfo, AccountCode);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
         partial void GetTransactionsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? AccountCode, string SearchText);
 
         [NonAction]
@@ -344,10 +373,10 @@ namespace ISBank_Assessment.UI.Controllers
         }
 
         [NonAction]
-        partial void TransactionDetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? Code, int PersonCode);
+        partial void TransactionDetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? Code, int? PersonCode);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult TransactionDetails(int? Code, int PersonCode)
+        public override System.Web.Mvc.ActionResult TransactionDetails(int? Code, int? PersonCode)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.TransactionDetails);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "Code", Code);

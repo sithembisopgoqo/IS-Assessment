@@ -61,6 +61,19 @@ namespace ISBank_Assessment.UI.Models
         public List<SelectListItem> StatusListItems { get; set; }
         public IList<TransactionsEntity> TransactionsList { get; set; }
 
+        /// <summary>
+        /// </summary>
+        public DateTime? TransactionDate { get; set; }
+
+        /// <summary>
+        /// </summary>
+
+        public DateTime? CaptureDate { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public double? Amount { get; set; }
+
     }
     #endregion Person 
 
@@ -118,13 +131,17 @@ namespace ISBank_Assessment.UI.Models
         /// </summary>
         [Display(Name = "Transaction Date")]
         [Required]
-        public DateTime? TransactionDate { get; set; }
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime TransactionDate { get; set; }
 
         /// <summary>
         /// </summary>
         [Display(Name = "Capture Date")]
         [Required]
-        public DateTime? CaptureDate { get; set; }
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime CaptureDate { get; set; }
 
         /// <summary>
         /// </summary>

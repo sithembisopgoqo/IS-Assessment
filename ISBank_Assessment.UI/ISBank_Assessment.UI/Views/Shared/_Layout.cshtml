@@ -4,7 +4,7 @@
     -Add css and js
     -Reference from bundle config
     -Add all references to layout
-    *@
+*@
 
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body  @*background="~/Content/Imgages/hero_1.jpg"*@>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
 
                     @if (SessionHelper.Contains("LoggedIn") && SessionHelper.Get<bool>("LoggedIn"))
                     {
-                        <li class="float-right">@Html.ActionLink("LogOff", "LogOff", "User")</li>
+                        <li class="float-right">@Html.ActionLink("LogOff", "LogOff", "Access")</li>
                     }
                     else
                     {
@@ -57,6 +57,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

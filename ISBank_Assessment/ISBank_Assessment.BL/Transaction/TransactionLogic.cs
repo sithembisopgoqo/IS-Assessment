@@ -118,7 +118,8 @@ namespace ISBank_Assessment.BL
         /// <param name="TransactionObj">Transaction object to modify</param>
         public Transaction ModifyTransaction(Transaction TransactionObj)
         {
-
+            //TransactionObj.capture_date = Convert.ToDateTime(TransactionObj.capture_date);
+            //TransactionObj.transaction_date = Convert.ToDateTime(TransactionObj.transaction_date);
             transactionRepository.Update(TransactionObj);
             unitOfWork.Save();
 

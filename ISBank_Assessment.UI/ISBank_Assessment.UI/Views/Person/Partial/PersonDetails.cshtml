@@ -139,11 +139,11 @@
                     <span class="btn btn-primary">Account Details</span>
                 </a>
 
-                <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Account", new {code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
+                <a id="GoToAccountDetails" type="button" class="GoToAccountDetails btn btn-outline-primary" href="@Url.Action("AccountDetails", "Account", new {@code=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Edit">
                     <span class="btn btn-primary">Edit</span>
                 </a>
 
-                <a id="remove" type="button" class="removeAccountDetails btn btn-outline-primary" href="#" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Remove">
+                <a id="remove" type="button" class="removeAccount btn btn-outline-primary" href="@Url.Action("DeleteAccount", "Account", new {@AccountCode=item.Code})" data-codeid="@item.Code" data-toggle="tooltip" data-placement="left" title="Remove">
                     <span class="btn btn-danger">Delete</span>
                 </a>
 
@@ -218,5 +218,5 @@
     });*@
 </script>
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+
 }

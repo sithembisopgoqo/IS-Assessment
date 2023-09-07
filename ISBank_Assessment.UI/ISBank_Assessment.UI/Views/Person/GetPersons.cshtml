@@ -1,7 +1,32 @@
 ﻿@model ISBank_Assessment.UI.Models.GetPersonViewModel
+@using PagedList;
+@using PagedList.Mvc;
+@using ISBank_Assessment.UI.Resources;
+@using ISBank_Assessment.UI.HtmlHelpers
+@using ISBank_Assessment.UI.Enums
+@using System.Globalization
+@using ISBank_Assessment.UI.Common
 
 @{
     ViewBag.Title = "GetPersons";
+}
+
+
+@{
+
+    WebGrid grid = new WebGrid();
+    grid.Bind(source: Model.PersonList, rowCount: 10, autoSortAndPage: false);
+}
+
+@helper GridActions(int Code, int UserId)
+{
+    <a id="GoToPersonDetails" type="button" class="GoToPersonDetails btn btn-outline-primary" href="@Url.Action("PersonDetails", "Person", new {code=Code})" data-codeid="@Code" data-toggle="tooltip" data-placement="left" title="Edit">
+        <span class="btn btn-primary">Edit</span>
+    </a>
+
+    <a id="remove" type="button" class="removePerson btn btn-outline-primary" href="@Url.Action("DeletePerson", "Person", new {code=Code})" data-codeid="@Code" data-toggle="tooltip" data-placement="left" title="Remove">
+        <span class="btn btn-danger">Delete</span>
+    </a>
 }
 
 <h2>Persons</h2>
@@ -12,7 +37,7 @@
 </a>
 
 
-@using (Html.BeginForm(MVC.Person.GetPersons(), FormMethod.Get, new { }))
+@*@using (Html.BeginForm(MVC.Person.GetPersons(), FormMethod.Get, new { }))
 {
     <div class="leftside">
         <div class="search-table-btn">
@@ -21,16 +46,43 @@
                 <span class="input-group-addon search-btn-text" type="submit" id="btnSearch">Search</span>
             </div>
         </div>
-      
+
     </div>
-}
+}*@
 
-@*TODO- DataTable grid*@
-<script src="~/Scripts/Grid/jquery.dataTables.min.js"></script>
-<script src="~/Scripts/Grid/jszip.min.js"></script>
-<link href="~/Content/DataTables/jquery.dataTables.min.css" rel="stylesheet" />
+@*TODO- DataTable grid
 
-<table id="tblGrid" class="table">
+    - Scripts and css should be in the layout referencing the bundle class
+    * For now it here for testing purpose
+*@
+<link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+
+
+<div class="row">
+
+    @grid.Table(
+tableStyle: "childTable nowrap",
+htmlAttributes: new { @id = "childTable" },
+columns: new[]
+{
+
+   grid.Column("UserId", header: "User", canSort: false),
+   grid.Column("Name", header: "Name", canSort: false),
+   grid.Column("Surname", header: "Surname", canSort: false),
+   grid.Column("IDNumber", header: "IDNumber", canSort: false),
+   grid.Column("", header:"Actions", canSort: false,
+                      format: item => GridActions(item.Code,item.UserId)),
+    })
+
+    @grid.Pager(mode: WebGridPagerModes.All, firstText: "first", previousText: "Previous", nextText: "Next", lastText: "Last")
+
+
+</div>
+
+@*<table id="tblGrid" class="table">
     <thead>
         <tr>
 
@@ -85,11 +137,11 @@
 
 
 
-</table>
+</table>*@
 
-<div>
+@*<div>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</div>*@
 
 
 @section Scripts {
@@ -114,22 +166,6 @@
         });
 
     });
-
-
-        $(document).ready(function () {
-            gridDataTableView("Grid Example.xls");
-        });
-
-
-    gridDataTableView = function (fname) {
-        $('#tblGrid').dataTable({
-            "bFilter": true,
-            "bLengthChange": false, "bPaginate": true, "bInfo": true,
-            dom: 'Bfrtip',
-            "order": [[0, 'desc'], [1, 'desc']],
-
-        });
-        }
 
           $('#btnSearch').on('click', function () {
 
@@ -156,6 +192,13 @@
 
     </script>
 
-
+    @*Need to be on the layout page only- For testing purpose*@
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/user")
+    @Scripts.Render("~/bundles/plugins/jTimeout")
+    @Scripts.Render("~/bundles/plugins/jConfirm")
 }
