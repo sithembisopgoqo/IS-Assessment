@@ -97,6 +97,8 @@ namespace ISBank_Assessment.UI.Controllers
 
             if (model.Code > 0)
             {
+                var outstandingBalance = accountClient.GetAccounts(model.Code).OutstandingBalance;
+                accountEntity.OutstandingBalance = outstandingBalance;
                 accountEntity.Code = model.Code;
                 
                 await accountClient.ModifyAccountAsync(accountEntity, model.Code);
