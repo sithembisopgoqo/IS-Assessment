@@ -21,6 +21,21 @@ namespace WebAPI
         /// Returns a list of all available AccountEntity for the specified
         /// User
         /// </summary>
+        /// <param name='userId'>
+        /// </param>
+        /// <param name='searchText'>
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<IList<AccountEntity>>> GetAllPersonAccountsWithHttpMessagesAsync(int userId, string searchText = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Returns a list of all available AccountEntity for the specified
+        /// User
+        /// </summary>
         /// <param name='personCode'>
         /// </param>
         /// <param name='searchText'>

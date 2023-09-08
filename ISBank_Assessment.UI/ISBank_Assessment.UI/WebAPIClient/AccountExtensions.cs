@@ -23,6 +23,42 @@ namespace WebAPI
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='userId'>
+            /// </param>
+            /// <param name='searchText'>
+            /// </param>
+            public static IList<AccountEntity> GetAllPersonAccounts(this IAccount operations, int userId, string searchText = default(string))
+            {
+                return Task.Factory.StartNew(s => ((IAccount)s).GetAllPersonAccountsAsync(userId, searchText), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Returns a list of all available AccountEntity for the specified User
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='userId'>
+            /// </param>
+            /// <param name='searchText'>
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IList<AccountEntity>> GetAllPersonAccountsAsync(this IAccount operations, int userId, string searchText = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetAllPersonAccountsWithHttpMessagesAsync(userId, searchText, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Returns a list of all available AccountEntity for the specified User
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
             /// <param name='personCode'>
             /// </param>
             /// <param name='searchText'>

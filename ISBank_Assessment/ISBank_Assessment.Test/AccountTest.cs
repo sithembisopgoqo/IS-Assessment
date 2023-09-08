@@ -55,6 +55,22 @@ namespace ISBank_Assessment.Test
 
         }
 
+
+        /// <summary>
+        ///Get All Person Accounts
+        /// </summary>
+        [TestMethod]
+        public void GetAllPersonAccounts()
+        {
+            var unitOfWork = new UnitOfWork(new DbContextFactory(null));
+
+            AccountLogic AccountLogic = new AccountLogic(unitOfWork);
+            
+            var list= AccountLogic.GetAllPersonAccounts(3);
+
+        }
+
+
         /// <summary>
         ///Change Account Status
         /// </summary>

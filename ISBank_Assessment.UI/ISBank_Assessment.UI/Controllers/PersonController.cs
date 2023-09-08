@@ -26,9 +26,6 @@ namespace ISBank_Assessment.UI.Controllers
 
 
             model.PersonList = await personClient.GetAllPersonsAsync(UserId, SearchText);
-            int pageSize = 5;
-            int pageIndex = model.PersonList.Count();
-            //model.PersonList = model.PersonList.ToPagedList(pageIndex, pageSize);
 
             return View(model);
         }
@@ -58,7 +55,7 @@ namespace ISBank_Assessment.UI.Controllers
                 model.Name = personEntity.Name;
                 model.Surname = personEntity.Surname;
                 model.IDNumber = personEntity.IDNumber;
-                model.AccountList = accountClient.GetAllAccounts((int)personEntity.Code);
+                model.AccountList = accountClient.GetAllPersonAccounts(UserId);
 
             }
             else

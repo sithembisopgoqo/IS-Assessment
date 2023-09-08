@@ -21,14 +21,23 @@ namespace WebAPI.Models
         /// <summary>
         /// Initializes a new instance of the AccountEntity class.
         /// </summary>
-        public AccountEntity(int? code = default(int?), int? personCode = default(int?), string accountNumber = default(string), double? outstandingBalance = default(double?), int? statusId = default(int?))
+        public AccountEntity(int? userId = default(int?), int? code = default(int?), int? personCode = default(int?), string accountNumber = default(string), double? outstandingBalance = default(double?), int? statusId = default(int?), string name = default(string), string iDNumber = default(string), string surname = default(string))
         {
+            UserId = userId;
             Code = code;
             PersonCode = personCode;
             AccountNumber = accountNumber;
             OutstandingBalance = outstandingBalance;
             StatusId = statusId;
+            Name = name;
+            IDNumber = iDNumber;
+            Surname = surname;
         }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "UserId")]
+        public int? UserId { get; set; }
 
         /// <summary>
         /// </summary>
@@ -54,6 +63,21 @@ namespace WebAPI.Models
         /// </summary>
         [JsonProperty(PropertyName = "StatusId")]
         public int? StatusId { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "Name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "IDNumber")]
+        public string IDNumber { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "Surname")]
+        public string Surname { get; set; }
 
     }
 }
