@@ -11,6 +11,7 @@ namespace ISBank_Assessment.BL
     {
         #region Read
         List<Account> GetAllAccounts(int? PersonCode, string SearchText = null);
+        List<AccountEntity> GetAllPersonAccounts(int UserId, string SearchText = null);
         Account GetAccountByPersonCode(int Code, int PersonCode);
         Account GetAccountByCode(int Code);
         #endregion

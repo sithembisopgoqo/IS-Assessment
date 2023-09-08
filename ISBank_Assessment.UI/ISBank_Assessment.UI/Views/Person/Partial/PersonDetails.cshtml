@@ -92,6 +92,18 @@
     <tr>
         <th>
 
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+
             @Html.DisplayNameFor(model => model.PersonCode)
         </th>
         <th>
@@ -112,6 +124,18 @@
     @foreach (var item in Model.AccountList)
     {
         <tr>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+             <td>
+
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.IDNumber)
+            </td>
             <td>
 
                 @Html.DisplayFor(modelItem => item.PersonCode)

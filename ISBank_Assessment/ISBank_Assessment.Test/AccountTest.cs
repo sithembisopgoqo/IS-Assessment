@@ -37,6 +37,7 @@ namespace ISBank_Assessment.Test
             account.account_number = "68328684";
             //	The user is never allowed to change the account outstanding balance.
             //account.outstanding_balance = 1000;
+            account.outstanding_balance = AccountLogic.GetAccountByCode(account.code).outstanding_balance;
             account.StatusId = 2;
 
             var accountModified = AccountLogic.ModifyAccount(account, account.code);
@@ -53,6 +54,22 @@ namespace ISBank_Assessment.Test
 
 
         }
+
+
+        /// <summary>
+        ///Get All Person Accounts
+        /// </summary>
+        [TestMethod]
+        public void GetAllPersonAccounts()
+        {
+            var unitOfWork = new UnitOfWork(new DbContextFactory(null));
+
+            AccountLogic AccountLogic = new AccountLogic(unitOfWork);
+            
+            var list= AccountLogic.GetAllPersonAccounts(3);
+
+        }
+
 
         /// <summary>
         ///Change Account Status
@@ -130,7 +147,7 @@ namespace ISBank_Assessment.Test
             //Pass param Account object and Code
             var account = AccountLogic.GetAccountByCode(1);
             //Calculate outstanding balance after transaction
-            if (transaction.amount > account.outstanding_balance)
+            if (account.outstanding_balance > transaction.amount)
             {
                 account.outstanding_balance = account.outstanding_balance - transaction.amount;
                 var updateAccount = AccountLogic.ModifyAccount(account, 1);
@@ -158,7 +175,7 @@ namespace ISBank_Assessment.Test
             //Pass param Account object and Code
             var account=AccountLogic.GetAccountByCode(1);
             //Calculate outstanding balance after transaction
-            if(transaction.amount> account.outstanding_balance)
+            if (account.outstanding_balance > transaction.amount)
             {
                 account.outstanding_balance = account.outstanding_balance - transaction.amount;
                 var updateAccount = AccountLogic.ModifyAccount(account, 1);

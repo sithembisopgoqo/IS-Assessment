@@ -10,13 +10,16 @@ namespace ISBank_Assessment.BE
     public class AccountEntity
     {
         ////BCC/ BEGIN CUSTOM CODE SECTION 
+        public int UserId { get; set; }
         ////ECC/ END CUSTOM CODE SECTION 
         public int code { get; set; }
         public int person_code { get; set; }
         public string account_number { get; set; }
         public decimal outstanding_balance { get; set; }
         public int? StatusId { get; set; }
-
+        public string Name { get; set; }
+        public string IDNumber { get; set; }
+        public string Surname { get; set; }
     }
 
     public class AccountEntityMapper : MapperBase<Account, AccountEntity>

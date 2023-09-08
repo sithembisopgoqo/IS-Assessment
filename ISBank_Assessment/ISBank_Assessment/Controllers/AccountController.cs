@@ -37,6 +37,25 @@ namespace ISBank_Assessment.Controllers
         }
 
         #region Account
+
+        /// <summary>
+        /// Returns a list of all available AccountEntity for the specified User
+        /// </summary>
+        /// <returns>List of AccountEntity</returns>
+        /// <param name="PersonCode"></param> 
+        [SwaggerResponse(HttpStatusCode.OK, type: typeof(List<AccountEntity>))]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [SwaggerResponse(HttpStatusCode.Unauthorized)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        [HttpGet]
+        //[CustomAuthorize("ViewAccount")]
+        public IHttpActionResult GetAllPersonAccounts(int UserId, string SearchText = null)
+        {
+            return Ok(_account.GetAllPersonAccounts(UserId, SearchText));
+        }
+
+
         /// <summary>
         /// Returns a list of all available AccountEntity for the specified User
         /// </summary>

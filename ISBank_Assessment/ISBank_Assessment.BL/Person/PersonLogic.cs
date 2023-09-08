@@ -31,7 +31,6 @@ namespace ISBank_Assessment.BL
         }
 
         #region Ready 
-
         /// <summary>
         /// Returns a list of all Person for the specified User
         /// </summary>

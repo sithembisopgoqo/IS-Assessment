@@ -13,6 +13,7 @@ namespace ISBank_Assessment.UI.Models
     public class GetPersonViewModel
     {
         public IEnumerable<PersonEntity> PersonList { get; set; }
+        public IEnumerable<AccountEntity> PersonAccountList { get; set; }
         /// </summary>
         [DisplayName("User")]
         public int? UserId { get; set; }

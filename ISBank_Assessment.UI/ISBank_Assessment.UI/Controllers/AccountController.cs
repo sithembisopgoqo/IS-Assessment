@@ -16,10 +16,24 @@ namespace ISBank_Assessment.UI.Controllers
     {
         // GET: Account
         #region Account 
+
+        [HttpGet]
+        [OutputCache(Duration = 0, NoStore = false)]
+        public virtual async Task<ActionResult> GetPersonAccounts(int? PersonCode, string SearchText = null)
+        {
+            Account accountClient = new Account(ServiceFactory.GetClient());
+            GetAccountViewModel model = new GetAccountViewModel();
+
+            model.AccountList = await accountClient.GetAllAccountsAsync(PersonCode.Value, SearchText);
+
+            return View(model);
+        }
+
         [HttpGet]
         [OutputCache(Duration = 0, NoStore = false)]
         public virtual async Task<ActionResult> GetAccounts(int? PersonCode,string SearchText = null)
         {
+          
             Account accountClient = new Account(ServiceFactory.GetClient());
             GetAccountViewModel model = new GetAccountViewModel();
 
@@ -72,7 +86,8 @@ namespace ISBank_Assessment.UI.Controllers
                 model.PersonCode = accountEntity.PersonCode;
                 model.AccountNumber = accountEntity.AccountNumber;
                 //The user is never allowed to change the account outstanding balance.
-                //model.OutstandingBalance = accountEntity.OutstandingBalance;
+                //Disable OutstandingBalance field in the ui 
+                model.OutstandingBalance = accountEntity.OutstandingBalance;
                 model.StatusId = accountEntity.StatusId;
                 model.TransactionsList = accountClient.GetAllTransactions(model.Code); 
 
@@ -97,6 +112,8 @@ namespace ISBank_Assessment.UI.Controllers
 
             if (model.Code > 0)
             {
+                var outstandingBalance = accountClient.GetAccounts(model.Code).OutstandingBalance;
+                accountEntity.OutstandingBalance = outstandingBalance;
                 accountEntity.Code = model.Code;
                 
                 await accountClient.ModifyAccountAsync(accountEntity, model.Code);
@@ -167,7 +184,7 @@ namespace ISBank_Assessment.UI.Controllers
                 model.Amount = transactionsEntity.Amount;
                 model.Description = transactionsEntity.Description;
                 //The user is never allowed to change the capture date.
-                //model.CaptureDate = transactionsEntity.CaptureDate;
+                model.CaptureDate = (DateTime)transactionsEntity.CaptureDate;
 
             }
             //TODO- Partial views for Person,Account and Transactions Details
